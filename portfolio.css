@@ -1,3 +1,161 @@
-* {
-    box-sizing: border-box;
+:root {
+    --c-bg: #fff;
+    --c-font: #000;
+    --c-primary: ;
+    --c-secondary: ;
+    --c-tertiary: ;
+    --c-tag: ;
 }
+
+.dark {
+    --c-bg: #000;
+    --c-font: #fff;
+    --c-primary: ;
+    --c-secondary: ;
+    --c-tertiary: ;
+    --c-tag: ;
+}
+
+body {
+    background-color: var(--c-bg);
+    color: var(--c-font);
+}
+
+
+/* ---------- HEADER ------------------------------------------------------------ */
+header {
+    background-color: var(--c-primary);
+}
+
+#header-text {}
+
+
+/* ---------- NAV ------------------------------------------------------------ */
+nav {
+    background-color: var(--c-secondary);
+}
+
+
+/* ---------- HERO ------------------------------------------------------------ */
+#hero {}
+
+
+/* ---------- SECTIONS (GENERAL) ------------------------------------------------------------ */
+.section-header {}
+
+.see-all {}
+
+
+/* ---------- ABOUT SECTION ------------------------------------------------------------ */
+#about-section {
+    background-color: var(--c-primary);
+}
+
+.about-button {}
+
+/* ---------- SKILLS SECTION ------------------------------------------------------------ */
+#main-pg-skills {}
+
+#skills-section {}
+
+.skills-box {
+
+    .sb-title {}
+
+    .sb-rows {}
+}
+
+
+
+/* ---------- EXPERIENCE SECTION ------------------------------------------------------------ */
+#experience-section {}
+
+.experience-box {}
+
+.exp-header {
+
+    .exp-job-title {}
+
+    .exp-position {}
+
+    .exp-date {}
+
+    .exp-company {}
+}
+
+
+.additional-section {}
+
+.dropdown {}
+
+.dropdown-arrow {}
+
+.dropdown-collapse {}
+
+
+/* ---------- PROJECTS SECTION ------------------------------------------------------------ */
+.main-pg-projects-box {}
+
+#projects-section {}
+
+#projects-grid {}
+
+.projects-box {}
+
+#proj-bg-einasvel {}
+
+.proj-info {
+
+    .proj-title {}
+
+    .proj-date {}
+
+    .proj-summary {}
+}
+
+
+/* ---------- CONTACT SECTION ------------------------------------------------------------ */
+#contact-section {}
+
+.contact-box {
+
+    a {}
+}
+
+
+/* ---------- CONTACT SECTION ------------------------------------------------------------ */
+footer {}
+
+
+/* ---------- TAGS ------------------------------------------------------------ */
+.tag {
+    width: min-content;
+}
+
+.tag-advanced {
+    background-color: var(--c-advanced);
+}
+
+.tag-advanced::after {
+    content: "Advanced";
+}
+
+.tag-proficient {
+    background-color: var(--c-proficient);
+}
+
+.tag-proficient::after {
+    content: "Proficient";
+}
+
+.tag-experienced {
+    background-color: var(--c-experienced);
+}
+
+.tag-experienced::after {
+    content: "Experienced";
+}
+
+.exp-tag {}
+
+.proj-tag {}

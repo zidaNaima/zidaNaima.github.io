@@ -1,11 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <script src="portfolio.js"></script>
 </head>
-<body>
-    Hello, World!
+
+<body class="dark">
+
+    <header>
+        <div id="header-text">Zida-Brown</div>
+        <label id="theme-toggle">
+            <input type="checkbox" onclick="toggleTheme()">
+            <span id="theme-toggle-slider"></span>
+        </label>
+    </header>
+
+
+
+    <nav>
+        <ul>
+            <li><a href="">About</a></li>
+            <li><a href="">Skills</a></li>
+            <li><a href="">Experience</a></li>
+            <li><a href="">Additional Experience</a></li>
+            <li><a href="">Projects</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </nav>
+
+
+
+    <main>
+
+        <section id="hero">
+            <div>Naima</div>
+            <div>Zida-Brown</div>
+            <div>
+                <p>Computer Science Bachelors 2028 | Western Washington University</p>
+            </div>
+        </section>
+        <!-- end hero section -->
+
+        <section id="about-section">
+            <div>
+                <img src="" alt="">
+            </div>
+            <div>
+                <div>
+                    <p>
+                        Self-motivated and passionate Computer Science student with 3 years of experience in a wide
+                        variety of fields working to bring knowledge, creativity and impact to all projects. Coming with
+                        a strong foundation in problem solving and project management with the ability to collaborate
+                        effectively on a team of any size. My biggest interests lie in software development and UI/UX
+                        web design, and the continuous effort I put forth to learn is evident within my high-quality and
+                        user-focused results.
+                    </p>
+                </div>
+            </div>
+            <div>
+                <a href="" class="about-button">Download Resume</a>
+                <a href="" class="about-button">Contact Me</a>
+            </div>
+        </section>
+        <!-- end about section -->
+
+        <section id="main-pg-skills">
+            <div>
+                <p class="tag tag-advanced">Comp. Sci. Education</p>
+                <p class="tag tag-advanced">Teaching</p>
+                <p class="tag tag-advanced">Class Management</p>
+            </div>
+            <a href="" class="see-all">See All Skills &rarr;</a>
+        </section>
+
+        <section id="experience-section">
+            <h3 class="section-header">My Experience</h3>
+
+            <section class="experience-box">
+                <div class="exp-header">
+                    <div>
+                        <p class="exp-job-title">Full Stack Developer</p>
+                        <p class="exp-date">September 2025 - Present</p>
+                    </div>
+                    <div>
+                        <p class="exp-company">PeerRated</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="experience-box">
+                <div class="exp-header">
+                    <div>
+                        <p class="exp-job-title">Teacher's Assistant</p>
+                        <p class="exp-date">July 2025 - Present</p>
+                    </div>
+                    <div>
+                        <p class="exp-company">Western Washington University</p>
+                    </div>
+                </div>
+            </section>
+
+            <a href="" class="see-all">See All Experience &rarr;</a>
+        </section>
+        <!-- end experience section -->
+
+        <section id="projects-section">
+            <h3 class="section-header">My Projects</h3>
+
+            <div>
+                <section class="main-pg-projects-box" id="proj-bg-einasvel">
+                    <div class="proj-info">
+                        <div>
+                            <p class="proj-title">Einasvel Guide</p>
+                            <p class="proj-date">February 2025 - Present</p>
+                        </div>
+                        <div>
+                            <p class="proj-summary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis,
+                                rem ab? Excepturi unde molestiae cupiditate tempora illum vero obcaecati provident
+                                delectus ratione aliquid officia minima reiciendis quod dolore sit quas iure, quaerat
+                                nihil aut! Dolore id quaerat mollitia odit omnis?</p>
+                        </div>
+                        <div>
+                            <ul>
+                                <li class="tag proj-tag">CSS3</li>
+                                <li class="tag proj-tag">HTML5</li>
+                                <li class="tag proj-tag">JavaScript</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="main-pg-projects-box" id="proj-bg-einasvel">
+                </section>
+                <section class="main-pg-projects-box" id="proj-bg-einasvel">
+                </section>
+                <section class="main-pg-projects-box" id="proj-bg-einasvel">
+                </section>
+                <a href="" class="see-all">See All Projects &rarr;</a>
+            </div>
+        </section>
+        <!-- end projects section -->
+
+
+        <section id="contact-section">
+            <h3 class="section-header">My Contacts</h3>
+            <div class="contact-box">
+                <a href="">Resume</a>
+            </div>
+            <div class="contact-box">
+                <a href="">LinkedIn</a>
+            </div>
+            <div class="contact-box">
+                <a href="">GitHub</a>
+            </div>
+            <div class="contact-box">
+                <a href="">Email</a>
+            </div>
+        </section>
+        <!-- end contact section -->
+
+    </main>
+
+
+
+    <footer>
+        Naima Zida-Brown &copy;
+        <script>document.write(new Date().getFullYear());</script>
+        <br>
+        "Do the best you can until you know better. Then when you know better, do better.""
+        <br>
+        - Maya Angelou
+    </footer>
+
 </body>
+
 </html>
