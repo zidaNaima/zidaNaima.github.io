@@ -191,6 +191,57 @@ main {
 /* ---------- HERO ------------------------------------------------------------ */
 #hero {
     padding-top: 50px;
+    height: 80vh;
+    max-height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero-text {
+    line-height: normal;
+
+    #hero-name {
+        display: grid;
+        width: fit-content;
+        margin: auto;
+        grid-template-areas:
+            "first ."
+            ". last"
+        ;
+
+        #firstname {
+            font-size: 200%;
+            font-weight: 400;
+            grid-area: first;
+        }
+
+        #lastname {
+            font-size: 300%;
+            grid-area: last;
+            z-index: 3;
+        }
+    }
+
+    #blue-line {
+        height: 0;
+        width: 100%;
+    }
+
+    #blue-line::after {
+        display: block;
+        transform: translateY(-42px);
+        content: "";
+        width: 90%;
+        margin: auto;
+        height: 30px;
+        background-color: var(--c-tertiary);
+    }
+
+    #hero-small-text {
+        margin: 0;
+        text-align: center;
+    }
 }
 
 
