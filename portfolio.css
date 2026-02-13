@@ -21,20 +21,20 @@ html {
     --c-bg: #fff;
     --c-font: #000;
     --c-shadow: rgb(0, 0, 0, 0.2);
-    --c-primary: ;
-    --c-secondary: ;
-    --c-tertiary: ;
-    --c-tag: ;
+    --c-primary: #ddd;
+    --c-secondary: #aaa;
+    --c-tertiary: #eee;
+    --c-tag: #ccc;
 }
 
 .dark {
     --c-bg: #000;
     --c-font: #fff;
     --c-shadow: rgb(255, 255, 255, 0.2);
-    --c-primary: ;
-    --c-secondary: ;
-    --c-tertiary: ;
-    --c-tag: ;
+    --c-primary: #333;
+    --c-secondary: #666;
+    --c-tertiary: #222;
+    --c-tag: #444;
 }
 
 body {
