@@ -40,3 +40,43 @@ function hamNav() {
         nav.style.left = null;
     }
 }
+
+// --------------
+
+const exp = document.getElementById("experience");
+const addit = document.getElementById("additional");
+
+function sectionAccordion(section) {
+    const clkBtn = section.getElementsByClassName("click-open-btn");
+    const clkCtn = section.getElementsByClassName("click-open-content");
+    let last_opened = 0;
+
+    // open first item by default
+    clkCtn[0].style.height = "max-content";
+    clkCtn[0].style.padding = "10px";
+    clkBtn[0].style.backgroundColor = "var(--c-primary)";
+
+    for (let i = 0; i < clkBtn.length; i++) {
+        clkBtn[i].addEventListener("click", function (event) {
+            // close last opened section
+            clkCtn[last_opened].style.height = null;
+            clkCtn[last_opened].style.padding = "0";
+            clkBtn[last_opened].style.backgroundColor = "var(--c-secondary)";
+
+            if (clkCtn[i].style.height) {
+                clkCtn[i].style.height = null;
+                clkCtn[i].style.padding = "0";
+            } else {
+                clkCtn[i].style.height = "max-content";
+                clkCtn[i].style.padding = "10px";
+                clkBtn[i].style.backgroundColor = "var(--c-primary)";
+                // set new last opened section
+                last_opened = i;
+            }
+        });
+    }
+}
+
+// run accordion for both sections
+sectionAccordion(exp);
+sectionAccordion(addit);

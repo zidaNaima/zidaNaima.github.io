@@ -426,9 +426,14 @@ main {
     margin-bottom: 20px;
 }
 
-.experience-box {
-    padding: 10px;
-    margin-bottom: 10px;
+#experience {
+    /* fixed height */
+    height: 400px;
+}
+
+.click-open-content {
+    height: 0;
+    overflow: hidden;
     background-color: var(--c-secondary);
     border-radius: 5px;
 
@@ -436,6 +441,13 @@ main {
         padding-left: 20px;
         margin-bottom: 0;
     }
+}
+
+.experience-box {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: var(--c-secondary);
+    border-radius: 5px;
 }
 
 .job-logo {
