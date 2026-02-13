@@ -441,7 +441,15 @@ main {
 
 
 /* ---------- CONTACT SECTION ------------------------------------------------------------ */
-footer {}
+footer {
+    padding: 20px;
+    margin-top: 5em;
+    font-size: smaller;
+    text-align: center;
+    background-color: var(--c-primary);
+    box-shadow: 0 -5px 10px var(--c-shadow);
+    z-index: 3;
+}
 
 
 /* ---------- TAGS ------------------------------------------------------------ */
