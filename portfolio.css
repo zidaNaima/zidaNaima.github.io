@@ -176,12 +176,13 @@ header {
 
 .header-top {
     padding: 0 20px;
+    flex-wrap: wrap;
+    align-items: end;
 }
 
 #header-text {
     font-size: 200%;
     font-weight: 300;
-    align-content: center;
 }
 
 
@@ -521,12 +522,49 @@ footer {
     :root {
         --c-primary: #de22ff;
     }
+
+    nav {
+        background-color: rgba(0, 0, 0, 0);
+        border-right: none;
+        position: relative;
+
+        margin-top: 0;
+        padding-top: 0;
+
+        ul {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            gap: 10px;
+        }
+
+        ul li a {
+            /* match font size */
+            line-height: 15px;
+            padding: 0;
+            border-bottom: none;
+            font-size: smaller;
+        }
+
+    }
+
+    #hamburger {
+        display: none;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     :root {
         --c-primary: #227eff;
+    }
+
+    nav ul {
+        gap: 30px;
+    }
+
+    nav ul li a {
+        font-size: medium;
     }
 }
 
