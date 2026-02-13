@@ -18,10 +18,12 @@ function toggleTheme() {
 
 const ham = document.getElementById("hamburger");
 const nav = document.querySelector("nav");
+// initialize nav positioning
+nav.style.left = "-300px";
 
 ham.addEventListener("click", function () {
-    if (nav.style.left) {
-        nav.style.left = null;
+    if (nav.style.left === "-300px") {
+        nav.style.left = "0";
     } else {
         nav.style.left = "-300px";
     }

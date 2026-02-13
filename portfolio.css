@@ -148,7 +148,7 @@ nav {
     background-color: var(--c-secondary);
     border-right: 1px solid var(--c-font);
     position: fixed;
-    left: 0px;
+    /* nav positioning "left: -300px" initialized in js */
     height: 100%;
     transition: left 0.2s ease-out;
     z-index: 4;
