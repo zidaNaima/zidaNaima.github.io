@@ -119,8 +119,8 @@ p, h3 {
 #theme-toggle {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 31px;
+    width: 58px;
+    height: 30px;
 }
 
 /* Hide checkbox */
@@ -139,8 +139,8 @@ p, h3 {
     right: 0;
     bottom: 0;
     background-color: var(--c-primary);
-    border: 2px solid var(--c-font);
-    border-radius: 34px;
+    border: 1px solid var(--c-font);
+    border-radius: 30px;
     transition: .4s;
 }
 
@@ -197,10 +197,10 @@ nav {
 
     /* for header */
     margin-top: 10px;
-    padding-top: 20px;
+    padding-top: 10px;
 
     ul {
-        padding: 0;
+        padding: 0 10px;
         cursor: pointer;
     }
 
@@ -352,7 +352,6 @@ main {
     width: max-content;
     color: var(--c-bg);
     background-color: var(--c-font);
-    font-weight: 300;
     font-size: smaller;
     text-decoration: none;
     border-radius: 5px;
@@ -479,6 +478,7 @@ main {
     background-color: var(--c-font);
     border-radius: 5px;
     margin-top: 20px;
+    margin-bottom: 5em;
 
     a {
         display: block;
@@ -495,7 +495,6 @@ main {
 /* ---------- FOOTER ------------------------------------------------------------ */
 footer {
     padding: 20px;
-    margin-top: 5em;
     font-size: smaller;
     text-align: center;
     background-color: var(--c-primary);
