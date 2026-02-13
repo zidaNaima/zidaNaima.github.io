@@ -410,7 +410,25 @@ main {
 
 .projects-box {}
 
-#proj-bg-1 {}
+#proj-bg-1 {
+    background: linear-gradient(to right, var(--c-secondary) 60%, rgba(0, 0, 0, 0)), url(images/headshot.jpg) no-repeat right;
+    background-color: var(--c-secondary);
+}
+
+#proj-bg-2 {
+    background: linear-gradient(to left, var(--c-secondary) 60%, rgba(0, 0, 0, 0)), url(images/headshot.jpg) no-repeat left;
+    background-color: var(--c-secondary);
+}
+
+#proj-bg-3 {
+    background: linear-gradient(to right, var(--c-secondary) 60%, rgba(0, 0, 0, 0)), url() no-repeat right;
+    background-color: var(--c-secondary);
+}
+
+#proj-bg-4 {
+    background: linear-gradient(to left, var(--c-secondary) 60%, rgba(0, 0, 0, 0)), url() no-repeat left;
+    background-color: var(--c-secondary);
+}
 
 
 /* ---------- CONTACT SECTION ------------------------------------------------------------ */
