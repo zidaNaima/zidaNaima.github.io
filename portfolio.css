@@ -275,6 +275,7 @@ main {
             font-size: 200%;
             font-weight: 400;
             grid-area: first;
+            z-index: 3;
         }
 
         #lastname {
@@ -284,25 +285,42 @@ main {
         }
     }
 
-    #blue-line {
-        height: 0;
-        width: 100%;
-    }
-
-    #blue-line::after {
-        display: block;
-        transform: translateY(-42px);
-        content: "";
-        width: 90%;
-        margin: auto;
-        height: 30px;
-        background-color: var(--c-tertiary);
-    }
-
     #hero-small-text {
         margin: 0;
         text-align: center;
     }
+}
+
+#blue-line {
+    height: 0;
+    width: 100%;
+}
+
+#blue-line::after {
+    display: block;
+    transform: translateY(-42px);
+    content: "";
+    width: 90%;
+    margin: auto;
+    height: 30px;
+    background-color: var(--c-tertiary);
+}
+
+.pagename {
+    /* matches blue-line */
+    width: 250px;
+    text-align: center;
+
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 200%;
+    font-weight: 400;
+    z-index: 3;
+}
+
+.pagename+#blue-line::after {
+    width: 250px;
+    margin: auto;
 }
 
 
