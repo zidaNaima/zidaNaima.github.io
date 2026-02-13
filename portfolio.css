@@ -57,8 +57,33 @@ p, h3 {
 
 
 /* ---------- GENERAL STYLING ------------------------------------------------------------ */
+.p-full {
+    padding: 30px;
+}
+
+.p-side {
+    padding: 0 30px;
+}
+
 .uppercase {
     text-transform: uppercase;
+}
+
+.font-500 {
+    /* medium */
+    font-weight: 500;
+}
+
+.font-smaller {
+    font-size: smaller;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.width-full {
+    width: 100%;
 }
 
 .flex {
@@ -82,6 +107,14 @@ p, h3 {
 .gap-20 {
     gap: 20px;
 }
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.pt-5 {
+    padding-top: 5px;
+} 
 
 
 /* ---------- TAGS ------------------------------------------------------------ */
@@ -332,16 +365,6 @@ main {
 
 
 /* ---------- SECTIONS (GENERAL) ------------------------------------------------------------ */
-.section-padding {
-    padding: 30px;
-}
-
-.header-padding {
-    padding: 0 30px;
-}
-
-.section-header {}
-
 .see-all {
     margin-top: 10px;
     text-decoration: none;
@@ -352,12 +375,19 @@ main {
     background-color: var(--c-primary);
 }
 
+.box-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: var(--c-secondary);
+    border-radius: 5px;
+}
+
 .split {
     display: grid;
     grid-template-columns: 1fr 1px 2fr;
     gap: 20px;
 
-    .section-header {
+    h3 {
         text-align: right;
     }
 }
@@ -369,7 +399,6 @@ main {
 
 /* ---------- ABOUT SECTION ------------------------------------------------------------ */
 #jump-to-about {
-    position: relative;
     top: -100px;
 }
 
@@ -403,10 +432,6 @@ main {
 
 
 /* ---------- SKILLS SECTION ------------------------------------------------------------ */
-#main-pg-skills {
-    width: 100%;
-}
-
 #skills-section {}
 
 .skills-box {
@@ -419,13 +444,6 @@ main {
 
 
 /* ---------- EXPERIENCE SECTION ------------------------------------------------------------ */
-#experience-section {}
-
-.split #experience-section {
-    /* main page */
-    margin-bottom: 20px;
-}
-
 #experience {
     /* fixed height */
     height: 400px;
@@ -443,68 +461,14 @@ main {
     }
 }
 
-.experience-box {
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: var(--c-secondary);
-    border-radius: 5px;
-}
-
 .job-logo {
     width: 50px;
     height: 50px;
     margin-right: 10px;
 }
 
-.exp-header {
-    display: flex;
-    justify-content: space-between;
-}
-
-.exp-job-title {
-    /* medium */
-    font-weight: 500;
-}
-
-.exp-date {
-    padding-top: 5px;
-    font-size: smaller;
-}
-
-.exp-company {
-    /* medium */
-    font-weight: 500;
-    text-align: right;
-}
-
-
-.additional-section {}
-
 
 /* ---------- PROJECTS SECTION ------------------------------------------------------------ */
-.main-pg-projects-box {
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-
-.proj-info {
-
-    .proj-title {
-        /* medium */
-        font-weight: 500;
-    }
-
-    .proj-date {
-        font-size: smaller;
-    }
-
-    .proj-summary {
-        margin-top: 5px;
-        font-size: smaller;
-    }
-}
-
 #projects-section {}
 
 #projects-grid {}
