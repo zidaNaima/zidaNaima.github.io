@@ -8,8 +8,7 @@ html {
 
 @font-face {
     font-family: "Amsterdam4";
-    src:
-        url(fonts/amsterdam-four.ttf)
+    src: url(fonts/amsterdam-four.ttf)
 }
 
 .amsterdam4 {
@@ -54,6 +53,8 @@ p, h3 {
     padding: 0;
 }
 
+
+/* ---------- GENERAL STYLING ------------------------------------------------------------ */
 .uppercase {
     text-transform: uppercase;
 }
@@ -79,6 +80,37 @@ p, h3 {
 .gap-20 {
     gap: 20px;
 }
+
+
+/* ---------- TAGS ------------------------------------------------------------ */
+.tag {
+    background-color: var(--c-tag);
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: smaller;
+}
+
+.tag-advanced {}
+
+.tag-advanced::after {
+    content: "Advanced";
+}
+
+.tag-proficient {}
+
+.tag-proficient::after {
+    content: "Proficient";
+}
+
+.tag-experienced {}
+
+.tag-experienced::after {
+    content: "Experienced";
+}
+
+.exp-tag {}
+
+.proj-tag {}
 
 
 /* ---------- THEME TOGGLE ------------------------------------------------------------ */
@@ -273,6 +305,10 @@ main {
 
 .see-all {}
 
+.prim-bg {
+    background-color: var(--c-primary);
+}
+
 .split {
     display: grid;
     grid-template-columns: 1fr 1px 2fr;
@@ -289,10 +325,6 @@ main {
 
 
 /* ---------- ABOUT SECTION ------------------------------------------------------------ */
-.prim-bg {
-    background-color: var(--c-primary);
-}
-
 #about-section {
     width: 80%;
     margin: auto;
@@ -449,7 +481,7 @@ main {
 }
 
 
-/* ---------- CONTACT SECTION ------------------------------------------------------------ */
+/* ---------- FOOTER ------------------------------------------------------------ */
 footer {
     padding: 20px;
     margin-top: 5em;
@@ -459,34 +491,3 @@ footer {
     box-shadow: 0 -5px 10px var(--c-shadow);
     z-index: 3;
 }
-
-
-/* ---------- TAGS ------------------------------------------------------------ */
-.tag {
-    background-color: var(--c-tag);
-    padding: 3px 10px;
-    border-radius: 15px;
-    font-size: smaller;
-}
-
-.tag-advanced {}
-
-.tag-advanced::after {
-    content: "Advanced";
-}
-
-.tag-proficient {}
-
-.tag-proficient::after {
-    content: "Proficient";
-}
-
-.tag-experienced {}
-
-.tag-experienced::after {
-    content: "Experienced";
-}
-
-.exp-tag {}
-
-.proj-tag {}
