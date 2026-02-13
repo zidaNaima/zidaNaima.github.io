@@ -24,6 +24,7 @@ html {
     --c-secondary: #aaa;
     --c-tertiary: #eee;
     --c-tag: #ccc;
+    --c-link: blue;
 }
 
 .dark {
@@ -34,6 +35,7 @@ html {
     --c-secondary: #666;
     --c-tertiary: #222;
     --c-tag: #444;
+    --c-link: red;
 }
 
 body {
@@ -303,7 +305,11 @@ main {
 
 .section-header {}
 
-.see-all {}
+.see-all {
+    margin-top: 10px;
+    text-decoration: none;
+    color: var(--c-link);
+}
 
 .prim-bg {
     background-color: var(--c-primary);
@@ -373,6 +379,11 @@ main {
 
 /* ---------- EXPERIENCE SECTION ------------------------------------------------------------ */
 #experience-section {}
+
+.split #experience-section {
+    /* main page */
+    margin-bottom: 20px;
+}
 
 .experience-box {
     padding: 10px;
