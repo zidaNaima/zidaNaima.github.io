@@ -1,3 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: "Amsterdam4";
+    src:
+        url(fonts/amsterdam-four.ttf)
+}
+
+.amsterdam4 {
+    font-family: Amsterdam4;
+    font-weight: 300;
+}
+
 :root {
     --c-bg: #fff;
     --c-font: #000;
@@ -19,6 +38,9 @@
 body {
     background-color: var(--c-bg);
     color: var(--c-font);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
 }
 
 
