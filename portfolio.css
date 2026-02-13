@@ -72,6 +72,14 @@ p {
     justify-content: center;
 }
 
+.gap-10 {
+    gap: 10px;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
 
 /* ---------- THEME TOGGLE ------------------------------------------------------------ */
 #theme-toggle {
@@ -265,20 +273,38 @@ main {
 /* ---------- ABOUT SECTION ------------------------------------------------------------ */
 .prim-bg {
     background-color: var(--c-primary);
-}
-
-#about-section {
-    img {
-        width: 200px;
-    }
-
-    width: 80%;
-    margin: auto;
-    gap: 20px;
     padding: 30px 0;
 }
 
-.about-button {}
+#about-section {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+#headshot-img {
+    min-width: 200px;
+    min-height: 100%;
+    background-image: url(images/headshot.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.about-button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    width: max-content;
+    color: var(--c-bg);
+    background-color: var(--c-font);
+    font-weight: 300;
+    font-size: smaller;
+    text-decoration: none;
+    border-radius: 5px;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+}
+
 
 /* ---------- SKILLS SECTION ------------------------------------------------------------ */
 #main-pg-skills {
@@ -358,27 +384,25 @@ footer {}
 
 /* ---------- TAGS ------------------------------------------------------------ */
 .tag {
+    background-color: var(--c-tag);
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: smaller;
 }
 
-.tag-advanced {
-    background-color: var(--c-advanced);
-}
+.tag-advanced {}
 
 .tag-advanced::after {
     content: "Advanced";
 }
 
-.tag-proficient {
-    background-color: var(--c-proficient);
-}
+.tag-proficient {}
 
 .tag-proficient::after {
     content: "Proficient";
 }
 
-.tag-experienced {
-    background-color: var(--c-experienced);
-}
+.tag-experienced {}
 
 .tag-experienced::after {
     content: "Experienced";
