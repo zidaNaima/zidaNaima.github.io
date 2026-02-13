@@ -506,3 +506,33 @@ footer {
     box-shadow: 0 -5px 10px var(--c-shadow);
     z-index: 3;
 }
+
+
+/* ---------- RESPONSIVENESS ------------------------------------------------------------ */
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    :root {
+        --c-primary: #ff2222;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    :root {
+        --c-primary: #de22ff;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    :root {
+        --c-primary: #227eff;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1250px) {
+    :root {
+        --c-primary: #22ff6c;
+    }
+}
