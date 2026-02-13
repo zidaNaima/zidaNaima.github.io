@@ -218,8 +218,8 @@ nav {
         display: block;
         color: var(--c-font);
         text-decoration: none;
-        padding-left: 10px;
-        padding-right: 20px;
+        padding-left: 15px;
+        padding-right: 45px;
         padding-top: 20px;
         padding-bottom: 0;
         border-bottom: 1px solid var(--c-font);
@@ -331,6 +331,11 @@ main {
 
 
 /* ---------- ABOUT SECTION ------------------------------------------------------------ */
+#jump-to-about {
+    position: relative;
+    top: -100px;
+}
+
 #about-section {
     width: 80%;
     margin: auto;
