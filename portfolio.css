@@ -243,13 +243,18 @@ main {
 
 
 /* ---------- HERO ------------------------------------------------------------ */
-#hero {
+.hero {
     padding-top: 50px;
-    height: 80vh;
-    max-height: 900px;
+    height: 45vh;
+    max-height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#hero-main {
+    height: 80vh;
+    max-height: 900px;
 }
 
 #hero-text {
