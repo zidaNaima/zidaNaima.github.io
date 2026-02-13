@@ -49,6 +49,11 @@ body {
     cursor: default;
 }
 
+p {
+    margin: 0;
+    padding: 0;
+}
+
 .uppercase {
     text-transform: uppercase;
 }
@@ -59,6 +64,12 @@ body {
 
 .justify-between {
     justify-content: space-between;
+}
+
+.centered {
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -252,14 +263,27 @@ main {
 
 
 /* ---------- ABOUT SECTION ------------------------------------------------------------ */
-#about-section {
+.prim-bg {
     background-color: var(--c-primary);
+}
+
+#about-section {
+    img {
+        width: 200px;
+    }
+
+    width: 80%;
+    margin: auto;
+    gap: 20px;
+    padding: 30px 0;
 }
 
 .about-button {}
 
 /* ---------- SKILLS SECTION ------------------------------------------------------------ */
-#main-pg-skills {}
+#main-pg-skills {
+    width: 100%;
+}
 
 #skills-section {}
 
@@ -334,7 +358,6 @@ footer {}
 
 /* ---------- TAGS ------------------------------------------------------------ */
 .tag {
-    width: min-content;
 }
 
 .tag-advanced {
