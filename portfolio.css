@@ -85,6 +85,15 @@ p, h3 {
 
 
 /* ---------- TAGS ------------------------------------------------------------ */
+.tag-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
 .tag {
     background-color: var(--c-tag);
     padding: 3px 10px;
@@ -109,8 +118,6 @@ p, h3 {
 .tag-experienced::after {
     content: "Experienced";
 }
-
-.exp-tag {}
 
 .proj-tag {}
 
@@ -329,6 +336,10 @@ main {
     padding: 30px;
 }
 
+.header-padding {
+    padding: 0 30px;
+}
+
 .section-header {}
 
 .see-all {
@@ -420,37 +431,42 @@ main {
     margin-bottom: 10px;
     background-color: var(--c-secondary);
     border-radius: 5px;
+
+    ul {
+        padding-left: 20px;
+        margin-bottom: 0;
+    }
+}
+
+.job-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
 }
 
 .exp-header {
     display: flex;
     justify-content: space-between;
+}
 
-    .exp-job-title {
-        /* medium */
-        font-weight: 500;
-    }
+.exp-job-title {
+    /* medium */
+    font-weight: 500;
+}
 
-    .exp-date {
-        padding-top: 5px;
-        font-size: smaller;
-    }
+.exp-date {
+    padding-top: 5px;
+    font-size: smaller;
+}
 
-    .exp-company {
-        /* medium */
-        font-weight: 500;
-        text-align: right;
-    }
+.exp-company {
+    /* medium */
+    font-weight: 500;
+    text-align: right;
 }
 
 
 .additional-section {}
-
-.dropdown {}
-
-.dropdown-arrow {}
-
-.dropdown-collapse {}
 
 
 /* ---------- PROJECTS SECTION ------------------------------------------------------------ */
@@ -599,10 +615,6 @@ footer {
         --c-primary: #22ff6c;
     }
 
-    main {
-        padding-top: 0;
-    }
-
     #wrapper {
         width: 1200px;
         margin-left: auto;
@@ -615,6 +627,7 @@ footer {
         /* round the top */
         #about-and-skills {
             border-radius: 5px 5px 0 0;
+            margin-top: -50px;
         }
 
         /* round the bottom */
