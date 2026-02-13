@@ -13,3 +13,16 @@ function toggleTheme() {
     // Save user's choice
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
+
+// --------------
+
+const ham = document.getElementById("hamburger");
+const nav = document.querySelector("nav");
+
+ham.addEventListener("click", function () {
+    if (nav.style.left) {
+        nav.style.left = null;
+    } else {
+        nav.style.left = "-300px";
+    }
+});

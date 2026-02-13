@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="portfolio.css">
-    <script src="portfolio.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,41 +13,47 @@
         rel="stylesheet">
 </head>
 
+
+
 <body class="dark">
 
     <header>
-        <div id="header-text">Zida-Brown</div>
-        <label id="theme-toggle">
-            <input type="checkbox" onclick="toggleTheme()">
-            <span id="theme-toggle-slider"></span>
-        </label>
+        <section class="header-top flex justify-between">
+            <div class="flex">
+                <div id="hamburger">&#9776;</div>
+                <div id="header-text">Zida-Brown</div>
+            </div>
+
+            <label id="theme-toggle">
+                <input type="checkbox" onclick="toggleTheme()">
+                <span id="theme-toggle-slider"></span>
+            </label>
+        </section>
+
+        <nav class="uppercase">
+            <ul>
+                <li><a href="">About</a></li>
+                <li><a href="">Skills</a></li>
+                <li><a href="">Experience</a></li>
+                <li><a href="">Additional Experience</a></li>
+                <li><a href="">Projects</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-
-
-    <nav>
-        <ul>
-            <li><a href="">About</a></li>
-            <li><a href="">Skills</a></li>
-            <li><a href="">Experience</a></li>
-            <li><a href="">Additional Experience</a></li>
-            <li><a href="">Projects</a></li>
-            <li><a href="">Contact</a></li>
-        </ul>
-    </nav>
+    <section id="hero">
+        <div>Naima</div>
+        <div class="amsterdam4">Zida-Brown</div>
+        <div>
+            <p>Computer Science Bachelors 2028 | Western Washington University</p>
+        </div>
+    </section>
+    <!-- end hero section -->
 
 
 
     <main>
-
-        <section id="hero">
-            <div>Naima</div>
-            <div class="amsterdam4">Zida-Brown</div>
-            <div>
-                <p>Computer Science Bachelors 2028 | Western Washington University</p>
-            </div>
-        </section>
-        <!-- end hero section -->
 
         <section id="about-section">
             <div>
@@ -149,7 +154,6 @@
         </section>
         <!-- end projects section -->
 
-
         <section id="contact-section">
             <h3 class="section-header">My Contacts</h3>
             <div class="contact-box">
@@ -181,5 +185,8 @@
     </footer>
 
 </body>
+
+<!-- JavaScript must be loaded after the HTML content -->
+<script src="portfolio.js"></script>
 
 </html>

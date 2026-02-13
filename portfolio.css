@@ -20,6 +20,7 @@ html {
 :root {
     --c-bg: #fff;
     --c-font: #000;
+    --c-shadow: rgb(0, 0, 0, 0.2);
     --c-primary: ;
     --c-secondary: ;
     --c-tertiary: ;
@@ -29,6 +30,7 @@ html {
 .dark {
     --c-bg: #000;
     --c-font: #fff;
+    --c-shadow: rgb(255, 255, 255, 0.2);
     --c-primary: ;
     --c-secondary: ;
     --c-tertiary: ;
@@ -41,6 +43,22 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     line-height: 24px;
+
+    margin: 0;
+    padding: 0;
+    cursor: default;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
 }
 
 
@@ -95,19 +113,85 @@ input:checked+#theme-toggle-slider:before {
 /* ---------- HEADER ------------------------------------------------------------ */
 header {
     background-color: var(--c-primary);
+    height: 50px;
+    align-content: center;
+    box-shadow: 0 5px 10px var(--c-shadow);
+    z-index: 5;
+    position: fixed;
+    width: 100%;
 }
 
-#header-text {}
+.header-top {
+    padding: 0 20px;
+}
+
+#header-text {
+    font-size: 200%;
+    font-weight: 300;
+    align-content: center;
+}
 
 
 /* ---------- NAV ------------------------------------------------------------ */
 nav {
     background-color: var(--c-secondary);
+    border-right: 1px solid var(--c-font);
+    position: fixed;
+    left: 0px;
+    height: 100%;
+    transition: left 0.2s ease-out;
+    z-index: 4;
+
+    /* for header */
+    margin-top: 10px;
+    padding-top: 20px;
+
+    ul {
+        padding: 0;
+        cursor: pointer;
+    }
+
+    ul li {
+        list-style-type: none;
+        letter-spacing: 0.5px;
+    }
+
+    ul li:hover {
+        font-weight: 500;
+        letter-spacing: 0.4px;
+    }
+
+    ul li a {
+        display: block;
+        color: var(--c-font);
+        text-decoration: none;
+        padding-left: 10px;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 0;
+        border-bottom: 1px solid var(--c-font);
+    }
+
+}
+
+#hamburger {
+    font-size: 25px;
+    align-self: center;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+
+/* ---------- MAIN ------------------------------------------------------------ */
+main {
+    padding-top: 50px;
 }
 
 
 /* ---------- HERO ------------------------------------------------------------ */
-#hero {}
+#hero {
+    padding-top: 50px;
+}
 
 
 /* ---------- SECTIONS (GENERAL) ------------------------------------------------------------ */
