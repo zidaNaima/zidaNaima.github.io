@@ -432,11 +432,20 @@ main {
 
 
 /* ---------- CONTACT SECTION ------------------------------------------------------------ */
-#contact-section {}
-
 .contact-box {
+    background-color: var(--c-font);
+    border-radius: 5px;
+    margin-top: 20px;
 
-    a {}
+    a {
+        display: block;
+        height: 100px;
+        width: 125px;
+        padding: 10px;
+        align-content: end;
+        text-decoration: none;
+        color: var(--c-bg);
+    }
 }
 
 
