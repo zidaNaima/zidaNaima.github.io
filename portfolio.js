@@ -58,14 +58,14 @@ if (page === '/zidaNaima.github.io/experience.html' || page === '/experience.htm
         // open first item by default
         clkCtn[0].style.height = "max-content";
         clkCtn[0].style.padding = "10px";
-        clkBtn[0].style.backgroundColor = "var(--c-primary)";
+        clkBtn[0].style.backgroundColor = "var(--c-primary-dark)";
 
         for (let i = 0; i < clkBtn.length; i++) {
             clkBtn[i].addEventListener("click", function (event) {
                 // close last opened section
                 clkCtn[last_opened].style.height = null;
                 clkCtn[last_opened].style.padding = "0";
-                clkBtn[last_opened].style.backgroundColor = "var(--c-secondary)";
+                clkBtn[last_opened].style.backgroundColor = "var(--c-primary)";
 
                 if (clkCtn[i].style.height) {
                     clkCtn[i].style.height = null;
@@ -73,7 +73,7 @@ if (page === '/zidaNaima.github.io/experience.html' || page === '/experience.htm
                 } else {
                     clkCtn[i].style.height = "max-content";
                     clkCtn[i].style.padding = "10px";
-                    clkBtn[i].style.backgroundColor = "var(--c-primary)";
+                    clkBtn[i].style.backgroundColor = "var(--c-primary-dark)";
                     // set new last opened section
                     last_opened = i;
                 }
