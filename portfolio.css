@@ -23,7 +23,7 @@ html {
     --c-primary: #ddd;
     --c-secondary: #aaa;
     --c-tertiary: #eee;
-    --c-tag: #ccc;
+    --c-tag: 204, 204, 204;
     --c-link: blue;
 }
 
@@ -34,7 +34,7 @@ html {
     --c-primary: #333;
     --c-secondary: #666;
     --c-tertiary: #222;
-    --c-tag: #444;
+    --c-tag: 68, 68, 68;
     --c-link: red;
 }
 
@@ -114,7 +114,7 @@ p, h3 {
 
 .pt-5 {
     padding-top: 5px;
-} 
+}
 
 
 /* ---------- TAGS ------------------------------------------------------------ */
@@ -128,28 +128,35 @@ p, h3 {
 }
 
 .tag {
-    background-color: var(--c-tag);
+    background-color: rgba(var(--c-tag), 1);
     padding: 3px 10px;
-    border-radius: 15px;
+    border-radius: 20px;
     font-size: smaller;
 }
 
-.tag-advanced {}
-
-.tag-advanced::after {
-    content: "Advanced";
+.tag-advanced {
+    background-color: rgba(var(--c-tag), 1);
+    border-radius: 20px;
 }
 
-.tag-proficient {}
-
-.tag-proficient::after {
-    content: "Proficient";
+.tag-proficient {
+    background-color: rgba(var(--c-tag), 0.75);
+    border-radius: 20px;
 }
 
-.tag-experienced {}
+.tag-experienced {
+    background-color: rgba(var(--c-tag), 0.5);
+    border-radius: 20px;
+}
 
-.tag-experienced::after {
-    content: "Experienced";
+.skills-tag {
+    background-color: var(--c-secondary);
+    height: 100%;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    padding: 3px 20px 3px 10px;
+    border-radius: inherit;
 }
 
 .proj-tag {}
@@ -233,6 +240,8 @@ nav {
     background-color: var(--c-secondary);
     border-right: 1px solid var(--c-font);
     position: fixed;
+    /* only on ham */
+    /* top: 10px; */
     /* nav positioning "left: -300px" initialized in js */
     height: 100%;
     transition: left 0.2s ease-out;
@@ -432,13 +441,34 @@ main {
 
 
 /* ---------- SKILLS SECTION ------------------------------------------------------------ */
-#skills-section {}
+#skills-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
 
 .skills-box {
+    border: 2px solid var(--c-primary);
+    padding: 20px;
+    width: 100%;
 
-    .sb-title {}
+    ul {
+        padding: 0;
+    }
 
-    .sb-rows {}
+    li {
+        height: 35px;
+        margin: 5px 0;
+        display: flex;
+        align-items: center;
+    }
+
+}
+
+.skills-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
 }
 
 
@@ -501,7 +531,6 @@ main {
     background-color: var(--c-font);
     border-radius: 5px;
     margin-top: 20px;
-    margin-bottom: 5em;
 
     a {
         display: block;
