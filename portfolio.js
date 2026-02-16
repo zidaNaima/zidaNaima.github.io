@@ -160,26 +160,15 @@ if (page === '/zidaNaima.github.io/projects.html' || page === '/projects.html') 
             card.classList.remove(
                 "center",
                 "up-1",
-                // "up-2",
                 "down-1",
-                // "down-2",
-                // "hidden"
             );
 
             if (offset === 0) {
                 card.classList.add("center");
             } else if (offset === 1) {
-                // down-1
                 card.classList.add("up-1");
             } else if (offset === 2) {
-                // down-2
                 card.classList.add("down-1");
-                // } else if (offset === cards.length - 1) {
-                //     card.classList.add("up-1");
-                // } else if (offset === cards.length - 2) {
-                //     card.classList.add("up-2");
-                // } else {
-                //     card.classList.add("hidden");
             }
         });
 
