@@ -1,3 +1,6 @@
+let page = window.location.pathname;
+if (page == '/zidaNaima.github.io/') page = '/index.html';
+
 // Check saved preference and system setting on page load
 const savedTheme = localStorage.getItem('theme');
 const systemThemeIsDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -39,44 +42,96 @@ function hamNav() {
     } else {
         nav.style.left = null;
     }
+    alert(nav.style.left);
 }
 
 // --------------
 
-const exp = document.getElementById("experience");
-const addit = document.getElementById("additional");
+if (page === '/zidaNaima.github.io/experience.html' || page === '/experience.html') {
+    const exp = document.getElementById("experience");
+    const addit = document.getElementById("additional");
 
-function sectionAccordion(section) {
-    const clkBtn = section.getElementsByClassName("click-open-btn");
-    const clkCtn = section.getElementsByClassName("click-open-content");
-    let last_opened = 0;
+    function sectionAccordion(section) {
+        const clkBtn = section.getElementsByClassName("click-open-btn");
+        const clkCtn = section.getElementsByClassName("click-open-content");
+        let last_opened = 0;
 
-    // open first item by default
-    clkCtn[0].style.height = "max-content";
-    clkCtn[0].style.padding = "10px";
-    clkBtn[0].style.backgroundColor = "var(--c-primary)";
+        // open first item by default
+        clkCtn[0].style.height = "max-content";
+        clkCtn[0].style.padding = "10px";
+        clkBtn[0].style.backgroundColor = "var(--c-primary)";
 
-    for (let i = 0; i < clkBtn.length; i++) {
-        clkBtn[i].addEventListener("click", function (event) {
-            // close last opened section
-            clkCtn[last_opened].style.height = null;
-            clkCtn[last_opened].style.padding = "0";
-            clkBtn[last_opened].style.backgroundColor = "var(--c-secondary)";
+        for (let i = 0; i < clkBtn.length; i++) {
+            clkBtn[i].addEventListener("click", function (event) {
+                // close last opened section
+                clkCtn[last_opened].style.height = null;
+                clkCtn[last_opened].style.padding = "0";
+                clkBtn[last_opened].style.backgroundColor = "var(--c-secondary)";
 
-            if (clkCtn[i].style.height) {
-                clkCtn[i].style.height = null;
-                clkCtn[i].style.padding = "0";
-            } else {
-                clkCtn[i].style.height = "max-content";
-                clkCtn[i].style.padding = "10px";
-                clkBtn[i].style.backgroundColor = "var(--c-primary)";
-                // set new last opened section
-                last_opened = i;
-            }
-        });
+                if (clkCtn[i].style.height) {
+                    clkCtn[i].style.height = null;
+                    clkCtn[i].style.padding = "0";
+                } else {
+                    clkCtn[i].style.height = "max-content";
+                    clkCtn[i].style.padding = "10px";
+                    clkBtn[i].style.backgroundColor = "var(--c-primary)";
+                    // set new last opened section
+                    last_opened = i;
+                }
+            });
+        }
     }
+
+    // run accordion for both sections
+    sectionAccordion(exp);
+    sectionAccordion(addit);
 }
 
-// run accordion for both sections
-sectionAccordion(exp);
-sectionAccordion(addit);
+// --------------
+
+if (page === '/zidaNaima.github.io/index.html' || page === '/index.html') {
+    // Footer form submission
+    const form = document.forms[0];
+    const nameInput = form.name;
+    const contactInput = form.contact;
+    const messageInput = form.message;
+
+    const publicKey = "xfbPdiVD70qK8vTY3";
+    const serviceId = "service_g63duhk";
+    const templateId = "template_nphcapj";
+
+    // Form validation
+    function validateMessage() {
+        if (messageInput.value == "") { // no message entered
+            alert("Please write a message before hitting submit.")
+            return false;
+        }
+        return true;
+    }
+
+    // Form submission
+    form.addEventListener("submit", (e) => {
+        emailjs.init(publicKey);
+
+        e.preventDefault(); // prevent form default behavior. Needed for outside submission.
+        const inputFields = {
+            name: nameInput.value,
+            contact: contactInput.value,
+            message: messageInput.value,
+        };
+
+        if (validateMessage()) {
+            emailjs.send(serviceId, templateId, inputFields)
+                .then(() => {
+                    alert("Your message has been sent successfully. Thank you!");
+                    nameInput.value = "";
+                    contactInput.value = "";
+                    messageInput.value = "";
+                }, (error) => {
+                    alert("Something seems to have gone wrong. Please try again or email me directly.");
+                    console.log(error);
+                });
+        }
+
+    });
+}

@@ -185,6 +185,19 @@
                     <div class="contact-box">
                         <a href="" class="uppercase">Email</a>
                     </div>
+                </div>
+
+                <form>
+                    <label for="msg-name">Name:</label>
+                    <label for="msg-contact">Contact Info:</label>
+                    <input type="text" name="name" id="msg-name">
+                    <input type="text" name="contact" id="msg-contact">
+
+                    <label for="msg-message">* Message:</label>
+                    <textarea name="message" id="msg-message"></textarea>
+
+                    <input type="submit" value="send" id="msg-submit">
+                </form>
 
             </section>
             <!-- end contact section -->
@@ -208,5 +221,15 @@
 
 <!-- JavaScript must be loaded after the HTML content -->
 <script src="portfolio.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+    (function () {
+        emailjs.init({
+            publicKey: "xfbPdiVD70qK8vTY3",
+        });
+    })();
+</script>
 
 </html>

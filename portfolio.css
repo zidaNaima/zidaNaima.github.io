@@ -543,6 +543,41 @@ main {
     }
 }
 
+form {
+    width: 70%;
+    height: max-content;
+    margin: 3em auto;
+    padding: 20px;
+    background-color: var(--c-bg);
+    box-shadow: 1px 5px 10px 2px var(--c-shadow);
+
+    display: grid;
+    align-items: end;
+    grid-template-rows:
+        max-content 40px 60px 100px 60px;
+    grid-template-areas:
+        "n c"
+        "ni ci"
+        "m ."
+        "mi mi"
+        ". s"
+    ;
+    gap: 10px;
+}
+
+input, textarea {
+    height: 100%;
+}
+
+#msg-message {
+    grid-area: mi;
+}
+
+#msg-submit {
+    grid-area: s;
+    height: 40px;
+}
+
 
 /* ---------- FOOTER ------------------------------------------------------------ */
 footer {
