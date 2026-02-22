@@ -47,10 +47,32 @@ function hamNav() {
 // --------------
 
 if (page === '/zidaNaima.github.io/experience.html' || page === '/experience.html') {
+
+    // Calculate and set the height of the experience section
+    function setExperienceHeight() {
+        const expItems = document.querySelectorAll("#experience .click-open-content");
+        var maxHeight = 0;
+
+        expItems.forEach(item => {
+            maxHeight = Math.max(maxHeight, item.scrollHeight);
+        });
+
+        // 24 line height of h3, 20 gap under h3, 50 bottom padding
+        document.getElementById("experience").style.height = (maxHeight + 94) + "px";
+    }
+
+    // call on initial page load (waits for full page layout to finish)
+    window.addEventListener("load", setExperienceHeight);
+    // call on screen resize
+    window.addEventListener('resize', setExperienceHeight);
+
+    // --------------
+
     const exp = document.getElementById("experience");
     const addit = document.getElementById("additional");
 
     function sectionAccordion(section) {
+        // Toggle the items
         const clkBtn = section.getElementsByClassName("click-open-btn");
         const clkCtn = section.getElementsByClassName("click-open-content");
         let last_opened = 0;
@@ -89,14 +111,14 @@ if (page === '/zidaNaima.github.io/experience.html' || page === '/experience.htm
 // --------------
 
 function emailToClipboard() {
-  const email = "naima.zida8@gmail.com";
-  
-  // Clipboard API
-  navigator.clipboard.writeText(email).then(function() {
-    alert("Email copied to clipboard!");
-  }).catch(function(err) {
-    console.error("Could not copy email");
-  });
+    const email = "naima.zida8@gmail.com";
+
+    // Clipboard API
+    navigator.clipboard.writeText(email).then(function () {
+        alert("Email copied to clipboard!");
+    }).catch(function (err) {
+        console.error("Could not copy email");
+    });
 }
 
 // --------------
