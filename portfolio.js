@@ -22,27 +22,29 @@ function toggleTheme() {
 const ham = document.getElementById("hamburger");
 const nav = document.querySelector("nav");
 
+// Only initialize a single click listener
+ham.addEventListener("click", function () {
+    if (nav.style.left === "-300px") {
+        nav.style.left = "0";
+    } else {
+        nav.style.left = "-300px";
+    }
+});
+
+function hamNav() {
+    if (window.innerWidth < 768) {
+        // initialize nav positioning for small screens
+        nav.style.left = "-300px";
+    } else {
+        // reset nav on large screens or when leaving small screen mode
+        nav.style.left = null;
+    }
+}
+
 // call on initial page load
 hamNav();
 // call on screen resize
 window.addEventListener('resize', hamNav);
-
-function hamNav() {
-    if (window.innerWidth < 768) {
-        // initialize nav positioning
-        nav.style.left = "-300px";
-
-        ham.addEventListener("click", function () {
-            if (nav.style.left === "-300px") {
-                nav.style.left = "0";
-            } else {
-                nav.style.left = "-300px";
-            }
-        });
-    } else {
-        nav.style.left = null;
-    }
-}
 
 // --------------
 
