@@ -75,11 +75,15 @@ p, h3 {
 
 /* ---------- GENERAL STYLING ------------------------------------------------------------ */
 .p-full {
-    padding: 30px;
+    padding: 60px 30px;
 }
 
-.p-side {
-    padding: 0 30px;
+.p-bottom {
+    padding-bottom: 60px;
+}
+
+.p-top {
+    padding-top: 60px;
 }
 
 .uppercase {
@@ -285,15 +289,12 @@ nav {
     background-color: var(--c-primary);
     border-right: 1px solid var(--c-font);
     position: fixed;
-    top: 10px;
+    /* start under header */
+    top: 50px;
     /* nav positioning "left: -300px" initialized in js */
     height: 100%;
     transition: left 0.2s ease-out;
     z-index: 4;
-
-    /* for header */
-    margin-top: 40px;
-    padding-top: 10px;
 
     ul {
         padding: 0 10px;
@@ -328,12 +329,6 @@ nav {
     align-self: center;
     margin-right: 20px;
     cursor: pointer;
-}
-
-
-/* ---------- MAIN ------------------------------------------------------------ */
-main {
-    padding-top: 50px;
 }
 
 
@@ -467,6 +462,11 @@ main {
     transform: translateY(-100px);
 }
 
+#jump-to-contact {
+    position: absolute;
+    transform: translateY(-50px);
+}
+
 #about-section {
     width: 80%;
     margin: auto;
@@ -483,7 +483,8 @@ main {
 }
 
 .about-button {
-    margin-top: 10px;
+    margin-top: 30px;
+    margin-bottom: 10px;
     width: max-content;
     color: var(--c-bg);
     background-color: var(--c-tertiary);
@@ -511,6 +512,7 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
+    margin-top: 30px;
 }
 
 .skills-tag-example {
@@ -542,7 +544,8 @@ main {
 
 .skills-logo {
     width: 30px;
-    height: 30px;
+    height: -webkit-fill-available;
+    max-height: 30px;
     margin-right: 10px;
 }
 
@@ -551,7 +554,7 @@ main {
 /* ---------- EXPERIENCE SECTION ------------------------------------------------------------ */
 #experience {
     /* fixed height */
-    height: 400px;
+    /* height: 400px; */
 }
 
 .click-open-btn {
@@ -641,8 +644,9 @@ main {
         content: "";
         position: absolute;
         top: 0;
+        left: 0;
         /* Y: height of border -1 for overlap */
-        transform: translateX(60px) translateY(-19px);
+        transform: translateX(80px) translateY(-19px);
         /* at least 3 sides must "appear" */
         border-bottom: 20px solid var(--c-primary-dark);
         border-right: 20px solid transparent;
@@ -760,8 +764,6 @@ main {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 30px;
-    margin-bottom: 3em;
 }
 
 .dot {
@@ -821,7 +823,7 @@ main {
     width: 175px;
     height: 100px;
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 40px;
 
     background-color: var(--c-tertiary);
     color: var(--c-bg);
@@ -848,7 +850,6 @@ main {
 form {
     width: 70%;
     height: max-content;
-    margin: 3em auto;
     padding: 20px;
     background-color: var(--c-bg);
     border: 1px solid var(--c-item-dark);
@@ -1019,12 +1020,6 @@ footer {
         /* round the shadow */
         border-radius: 5px;
         box-shadow: 0 7px 10px 5px var(--c-shadow);
-
-        /* round the top */
-        #about-and-skills {
-            border-radius: 5px 5px 0 0;
-            margin-top: -50px;
-        }
 
         /* round the bottom */
         footer {
