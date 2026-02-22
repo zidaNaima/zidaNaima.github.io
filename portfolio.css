@@ -463,7 +463,8 @@ main {
 
 /* ---------- ABOUT SECTION ------------------------------------------------------------ */
 #jump-to-about {
-    top: -100px;
+    position: absolute;
+    transform: translateY(-100px);
 }
 
 #about-section {
@@ -551,6 +552,10 @@ main {
 #experience {
     /* fixed height */
     height: 400px;
+}
+
+.click-open-btn {
+    cursor: pointer;
 }
 
 .click-open-content {
@@ -830,8 +835,14 @@ main {
     }
 
     .contact-link {
-        font-size: 0.75em;
+        font-size: 11px;
     }
+}
+
+.contact-button {
+    border: none;
+    font-family: montserrat;
+    cursor: pointer;
 }
 
 form {

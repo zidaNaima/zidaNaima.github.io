@@ -88,6 +88,19 @@ if (page === '/zidaNaima.github.io/experience.html' || page === '/experience.htm
 
 // --------------
 
+function emailToClipboard() {
+  const email = "naima.zida8@gmail.com";
+  
+  // Clipboard API
+  navigator.clipboard.writeText(email).then(function() {
+    alert("Email copied to clipboard!");
+  }).catch(function(err) {
+    console.error("Could not copy email");
+  });
+}
+
+// --------------
+
 if (page === '/zidaNaima.github.io/index.html' || page === '/index.html') {
     // Footer form submission
     const form = document.forms[0];
