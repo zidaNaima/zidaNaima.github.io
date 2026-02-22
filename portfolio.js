@@ -50,6 +50,7 @@ window.addEventListener('resize', hamNav);
 
 if (page === '/zidaNaima.github.io/experience.html' || page === '/experience.html') {
 
+    // Desktop-only function
     // Calculate and set the height of the experience section
     function setExperienceHeight() {
         const expItems = document.querySelectorAll("#experience .click-open-content");
@@ -63,21 +64,21 @@ if (page === '/zidaNaima.github.io/experience.html' || page === '/experience.htm
         document.getElementById("experience").style.height = (maxHeight + 94) + "px";
     }
 
-    // Call on initial page load (waits for full page layout to finish)
-    window.addEventListener("load", setExperienceHeight);
-    // Call on screen resize
-    window.addEventListener('resize', setExperienceHeight);
-
     // --------------
 
     const exp = document.getElementById("experience");
     const addit = document.getElementById("additional");
 
     function sectionAccordion(section) {
-        // Toggle the items
+        // Variables to toggle the items
         const clkBtn = section.getElementsByClassName("click-open-btn");
         const clkCtn = section.getElementsByClassName("click-open-content");
         let last_opened = 0;
+
+        // Initialize padding
+        for (let i = 0; i < clkCtn.length; i++) {
+            clkCtn[i].style.padding = "0px";
+        }
 
         // Open the first item by default
         clkCtn[0].style.height = "max-content";
@@ -108,6 +109,61 @@ if (page === '/zidaNaima.github.io/experience.html' || page === '/experience.htm
     // Run the accordion for both sections
     sectionAccordion(exp);
     sectionAccordion(addit);
+
+    // --------------
+
+    // Run "desktop mode" if desktop
+    var expScreenIsDesktop = window.innerWidth >= 768;
+
+    function checkDesktop() {
+        var expResizedToDesktop = window.innerWidth >= 768;
+
+        if (expResizedToDesktop && !expScreenIsDesktop) {
+            // Just resized into desktop mode
+            // Enable desktop mode
+
+            // Wipe padding for all but first
+            const expCtn = document.getElementById("experience").getElementsByClassName("click-open-content");
+            const addtCtn = document.getElementById("additional").getElementsByClassName("click-open-content");
+            for (let i = 1; i < expCtn.length; i++) {
+                expCtn[i].style.padding = "0px";
+            }
+            for (let i = 1; i < addtCtn.length; i++) {
+                addtCtn[i].style.padding = "0px";
+            }
+
+            setExperienceHeight();
+
+        } else if (!expResizedToDesktop && expScreenIsDesktop) {
+            // Just resized into mobile mode
+            // Disable desktop mode
+            document.getElementById("experience").style.removeProperty("height");
+
+            const clkCtn = document.getElementsByClassName("click-open-content");
+            for (let i = 0; i < clkCtn.length; i++) {
+                clkCtn[i].style.padding = "10px";
+            }
+
+        } else if (expResizedToDesktop && expScreenIsDesktop) {
+            // Screen initialized to desktop
+            setExperienceHeight();
+        } else {
+            // Screen initialized to mobile
+            document.getElementById("experience").style.removeProperty("height");
+
+            const clkCtn = document.getElementsByClassName("click-open-content");
+            for (let i = 0; i < clkCtn.length; i++) {
+                clkCtn[i].style.padding = "10px";
+            }
+        }
+
+        expScreenIsDesktop = expResizedToDesktop;
+    }
+
+    // Run on load
+    window.addEventListener("load", checkDesktop);
+    // Run on resize
+    window.addEventListener("resize", checkDesktop);
 }
 
 // --------------
