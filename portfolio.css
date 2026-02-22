@@ -89,7 +89,7 @@ p, h3 {
 }
 
 .font-500 {
-    /* medium */
+    /* Medium */
     font-weight: 500;
 }
 
@@ -287,9 +287,9 @@ nav {
     background-color: var(--c-primary);
     border-right: 1px solid var(--c-font);
     position: fixed;
-    /* start under header */
+    /* Start's under the header */
     top: 50px;
-    /* nav positioning "left: -300px" initialized in js */
+    /* Nav positioning "left: -300px" initialized in js */
     height: 100%;
     transition: left 0.2s ease-out;
     z-index: 4;
@@ -399,7 +399,7 @@ nav {
 }
 
 .pagename {
-    /* matches hero-underline */
+    /* Matches hero-underline */
     width: 250px;
     text-align: center;
 
@@ -492,12 +492,12 @@ nav {
     letter-spacing: 0.4px;
     cursor: pointer;
 
-    /* left +20px svg width +5px spacing */
+    /* Left padding +20px for svg width and +5px for spacing */
     padding: 10px 15px 10px 40px;
 
     svg {
         position: absolute;
-        /* left -20px svg width -5px spacing */
+        /* Move left -20px for svg width and -5px for spacing */
         transform: translateX(-25px);
         height: 20px;
         width: 20px;
@@ -526,6 +526,10 @@ nav {
     border: 2px solid var(--c-primary);
     padding: 20px;
     width: 100%;
+
+    p {
+        border-bottom: 2px solid var(--c-primary);
+    }
 
     ul {
         padding: 0;
@@ -558,6 +562,7 @@ nav {
     height: 0;
     overflow: hidden;
     background-color: var(--c-primary);
+    box-shadow: 0px 5px 10px -2px var(--c-shadow);
     border-radius: 5px;
 
     ul {
@@ -590,6 +595,7 @@ nav {
     }
 
     textPath {
+        fill: var(--c-font);
         font-size: 8px;
     }
 }
@@ -633,14 +639,14 @@ nav {
     }
 
     p::before {
-        /* point */
+        /* The point */
         content: "";
         position: absolute;
         top: 0;
         left: 0;
         /* Y: height of border -1 for overlap */
         transform: translateX(80px) translateY(-19px);
-        /* at least 3 sides must "appear" */
+        /* At least 3 sides must "appear" */
         border-bottom: 20px solid var(--c-primary-dark);
         border-right: 20px solid transparent;
         border-left: 20px solid transparent;
@@ -649,7 +655,7 @@ nav {
 
 
 /* ---------- PROJECTS SECTION ------------------------------------------------------------ */
-/* index page */
+/* On the index page */
 .proj-text-bg {
     background-color: color-mix(in srgb, var(--c-primary) 70%, transparent);
     border-radius: 5px;
@@ -671,7 +677,7 @@ nav {
     background-size: cover;
 }
 
-/* projects page */
+/* On the projects page */
 /* 
     Modified code from
     Author: Gopi Chakradhar https://gopichakradhar.me/
@@ -682,7 +688,7 @@ nav {
     justify-content: center;
     align-items: center;
     width: 100%;
-    /* exact height */
+    /* An exact height */
     height: 480px;
     perspective: 1000px;
 }
@@ -848,10 +854,8 @@ form {
     box-shadow: 1px 5px 15px var(--c-shadow);
 
     display: grid;
-    grid-template-rows:
-        40px 120px 40px;
-    grid-template-areas:
-        "ni ci"
+    grid-template-rows: 40px 120px 40px;
+    grid-template-areas: "ni ci"
         "mi mi"
         ". s"
     ;
@@ -939,7 +943,7 @@ footer {
         }
 
         ul li a {
-            /* match font size */
+            /* Match the font size */
             line-height: 15px;
             padding: 0;
             border-bottom: none;
@@ -953,7 +957,7 @@ footer {
     }
 
     .carousel-track {
-        /* exact height */
+        /* An exact height */
         height: 580px;
     }
 
@@ -1024,11 +1028,11 @@ footer {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 10em;
-        /* round the shadow */
+        /* Round the shadow */
         border-radius: 5px;
         box-shadow: 0 7px 10px 5px var(--c-shadow);
 
-        /* round the bottom */
+        /* Round the bottom */
         footer {
             border-radius: 0 0 5px 5px;
             box-shadow: none;

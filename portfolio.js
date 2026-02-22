@@ -33,17 +33,17 @@ ham.addEventListener("click", function () {
 
 function hamNav() {
     if (window.innerWidth < 768) {
-        // initialize nav positioning for small screens
+        // Initialize nav positioning for small screens
         nav.style.left = "-300px";
     } else {
-        // reset nav on large screens or when leaving small screen mode
+        // Reset nav on large screens or when leaving small screen mode
         nav.style.left = null;
     }
 }
 
-// call on initial page load
+// Call on initial page load
 hamNav();
-// call on screen resize
+// Call on screen resize
 window.addEventListener('resize', hamNav);
 
 // --------------
@@ -63,9 +63,9 @@ if (page === '/zidaNaima.github.io/experience.html' || page === '/experience.htm
         document.getElementById("experience").style.height = (maxHeight + 94) + "px";
     }
 
-    // call on initial page load (waits for full page layout to finish)
+    // Call on initial page load (waits for full page layout to finish)
     window.addEventListener("load", setExperienceHeight);
-    // call on screen resize
+    // Call on screen resize
     window.addEventListener('resize', setExperienceHeight);
 
     // --------------
@@ -79,14 +79,14 @@ if (page === '/zidaNaima.github.io/experience.html' || page === '/experience.htm
         const clkCtn = section.getElementsByClassName("click-open-content");
         let last_opened = 0;
 
-        // open first item by default
+        // Open the first item by default
         clkCtn[0].style.height = "max-content";
         clkCtn[0].style.padding = "10px";
         clkBtn[0].style.backgroundColor = "var(--c-primary-dark)";
 
         for (let i = 0; i < clkBtn.length; i++) {
             clkBtn[i].addEventListener("click", function (event) {
-                // close last opened section
+                // Close the last opened section
                 clkCtn[last_opened].style.height = null;
                 clkCtn[last_opened].style.padding = "0";
                 clkBtn[last_opened].style.backgroundColor = "var(--c-primary)";
@@ -98,14 +98,14 @@ if (page === '/zidaNaima.github.io/experience.html' || page === '/experience.htm
                     clkCtn[i].style.height = "max-content";
                     clkCtn[i].style.padding = "10px";
                     clkBtn[i].style.backgroundColor = "var(--c-primary-dark)";
-                    // set new last opened section
+                    // Set a new last opened section
                     last_opened = i;
                 }
             });
         }
     }
 
-    // run accordion for both sections
+    // Run the accordion for both sections
     sectionAccordion(exp);
     sectionAccordion(addit);
 }
@@ -138,7 +138,7 @@ if (page === '/zidaNaima.github.io/index.html' || page === '/index.html') {
 
     // Form validation
     function validateMessage() {
-        if (messageInput.value == "") { // no message entered
+        if (nameInput.value == "" || contactInput.value == "" || messageInput.value == "") { // All required content not entered
             alert("Please fill out all required information before sending your message.")
             return false;
         }
@@ -149,7 +149,7 @@ if (page === '/zidaNaima.github.io/index.html' || page === '/index.html') {
     form.addEventListener("submit", (e) => {
         emailjs.init(publicKey);
 
-        e.preventDefault(); // prevent form default behavior. Needed for outside submission.
+        e.preventDefault(); // Prevent form default behavior. Needed for outside submission.
         const inputFields = {
             name: nameInput.value,
             contact: contactInput.value,
