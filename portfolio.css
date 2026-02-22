@@ -144,12 +144,13 @@ p, h3 {
 
 /* ---------- TAGS ------------------------------------------------------------ */
 .tag-list {
-    padding: 0;
+    padding: 10px 0 0;
     margin: 0;
     list-style-type: none;
     display: flex;
+    flex-wrap: wrap;
     justify-content: end;
-    gap: 20px;
+    gap: 5px 10px;
 }
 
 .tag {
@@ -157,6 +158,12 @@ p, h3 {
     padding: 3px 10px;
     border-radius: 20px;
     font-size: smaller;
+}
+
+.tag-logo {
+    width: 10px;
+    max-height: 15px;
+    margin-right: 5px;
 }
 
 .tag-advanced {
@@ -371,6 +378,10 @@ main {
         margin: 0;
         text-align: center;
     }
+
+    svg {
+        height: 20px;
+    }
 }
 
 #hero-underline {
@@ -465,7 +476,6 @@ main {
 }
 
 .about-button {
-    padding: 10px 15px;
     margin-top: 10px;
     width: max-content;
     color: var(--c-bg);
@@ -475,6 +485,17 @@ main {
     border-radius: 5px;
     letter-spacing: 0.4px;
     cursor: pointer;
+
+    /* left +20px svg width +5px spacing */
+    padding: 10px 15px 10px 40px;
+
+    svg {
+        position: absolute;
+        /* left -20px svg width -5px spacing */
+        transform: translateX(-25px);
+        height: 20px;
+        width: 20px;
+    }
 }
 
 
@@ -542,29 +563,28 @@ main {
     width: 50px;
     height: 50px;
     margin-right: 10px;
+    border-radius: 5px;
+}
+
+.position {
+    padding: 5px;
+    background-color: var(--c-primary-dark);
+    border-radius: 5px;
 }
 
 
 /* ---------- PROJECTS SECTION ------------------------------------------------------------ */
 /* index page */
 #proj-bg-1 {
-    background: linear-gradient(to right, var(--c-primary) 60%, rgba(0, 0, 0, 0)), url(images/headshot.jpg) no-repeat right;
+    background: linear-gradient(to right, var(--c-primary) 40%, color-mix(in srgb, var(--c-primary) 70%, transparent) 70%, rgba(0, 0, 0, 0)), url(images/proj1.png) no-repeat right;
     background-color: var(--c-primary);
+    background-size: cover;
 }
 
 #proj-bg-2 {
-    background: linear-gradient(to left, var(--c-primary) 60%, rgba(0, 0, 0, 0)), url(images/headshot.jpg) no-repeat left;
+    background: linear-gradient(to right, var(--c-primary) 40%, color-mix(in srgb, var(--c-primary) 70%, transparent) 70%, rgba(0, 0, 0, 0)), url(images/proj2.png) no-repeat left;
     background-color: var(--c-primary);
-}
-
-#proj-bg-3 {
-    background: linear-gradient(to right, var(--c-primary) 60%, rgba(0, 0, 0, 0)), url() no-repeat right;
-    background-color: var(--c-primary);
-}
-
-#proj-bg-4 {
-    background: linear-gradient(to left, var(--c-primary) 60%, rgba(0, 0, 0, 0)), url() no-repeat left;
-    background-color: var(--c-primary);
+    background-size: cover;
 }
 
 /* projects page */
@@ -708,18 +728,27 @@ main {
 
 /* ---------- CONTACT SECTION ------------------------------------------------------------ */
 .contact-box {
-    background-color: var(--c-tertiary);
-    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 175px;
+    height: 100px;
+    padding: 10px;
     margin-top: 20px;
 
-    a {
-        display: block;
-        height: 100px;
-        width: 125px;
-        padding: 10px;
-        align-content: end;
-        text-decoration: none;
-        color: var(--c-bg);
+    background-color: var(--c-tertiary);
+    color: var(--c-bg);
+    text-decoration: none;
+    border-radius: 5px;
+    line-height: normal;
+    overflow: hidden;
+
+    svg {
+        height: 30px;
+    }
+
+    .contact-link {
+        font-size: 0.75em;
     }
 }
 
