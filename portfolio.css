@@ -27,7 +27,6 @@ html {
     --c-tertiary: rgb(0, 142, 97);
     --c-item: rgb(227, 227, 227);
     --c-item-dark: rgb(122, 122, 122);
-    --c-form-input: #fff;
 
     --c-tag: 89, 235, 150;
     --c-advanced: rgb(89, 235, 150);
@@ -46,7 +45,6 @@ html {
     --c-tertiary: rgb(6, 223, 114);
     --c-item: #444;
     --c-item-dark: #777;
-    --c-form-input: #ccc;
 
     --c-tag: 0, 115, 75;
     --c-advanced: rgb(6, 223, 93);
@@ -552,11 +550,6 @@ nav {
 
 
 /* ---------- EXPERIENCE SECTION ------------------------------------------------------------ */
-#experience {
-    /* fixed height */
-    /* height: 400px; */
-}
-
 .click-open-btn {
     cursor: pointer;
 }
@@ -843,37 +836,51 @@ nav {
 
 .contact-button {
     border: none;
-    font-family: montserrat;
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
 }
 
 form {
     width: 70%;
-    height: max-content;
     padding: 20px;
     background-color: var(--c-bg);
     border: 1px solid var(--c-item-dark);
     box-shadow: 1px 5px 15px var(--c-shadow);
 
     display: grid;
-    align-items: end;
     grid-template-rows:
-        max-content 40px 60px 100px 60px;
+        40px 120px 40px;
     grid-template-areas:
-        "n c"
         "ni ci"
-        "m ."
         "mi mi"
         ". s"
     ;
-    gap: 10px;
+    gap: 40px;
+
+    ::placeholder {
+        color: var(--c-link);
+    }
 }
 
-input, textarea {
+input {
     height: 100%;
-    border: 1px solid var(--c-item-dark);
-    background-color: var(--c-form-input);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--c-font);
+    background-color: var(--c-bg);
+    border: none;
+    border-bottom: 1px solid var(--c-item-dark);
     outline: none;
+}
+
+textarea {
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 5px;
+    color: var(--c-font);
+    background-color: var(--c-bg);
+    border: 1px solid var(--c-item-dark);
+    outline: none;
+    resize: none;
 }
 
 #msg-message {

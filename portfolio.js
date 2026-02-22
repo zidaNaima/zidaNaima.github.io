@@ -139,7 +139,7 @@ if (page === '/zidaNaima.github.io/index.html' || page === '/index.html') {
     // Form validation
     function validateMessage() {
         if (messageInput.value == "") { // no message entered
-            alert("Please write a message before hitting submit.")
+            alert("Please fill out all required information before sending your message.")
             return false;
         }
         return true;
