@@ -24,7 +24,6 @@ html {
     --c-primary: #f3f3f3;
     --c-primary-dark: #e3e3e3;
     --c-secondary: #e3e1d9;
-    --c-tertiary: rgb(0, 191, 131);
     --c-tertiary: rgb(0, 142, 97);
     --c-item: rgb(227, 227, 227);
     --c-item-dark: rgb(122, 122, 122);
@@ -82,6 +81,26 @@ main {
 p, h3 {
     margin: 0;
     padding: 0;
+}
+
+
+/* ---------- SCROLLBAR ------------------------------------------------------------ */
+::-webkit-scrollbar {
+    width: 15px;
+    background-color: var(--c-item);
+    border-left: 1px solid rgba(0, 0, 0, .2);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: color-mix(in srgb, var(--c-item-dark) 60%, transparent);
+    border-left: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 15px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--c-item-dark);
+    cursor: pointer;
 }
 
 
@@ -167,6 +186,22 @@ p, h3 {
 
 .mobile-h-0 {
     height: 0;
+}
+
+.dark .dark-brighter-150 {
+    filter: brightness(150%) drop-shadow(0 0 1px var(--c-shadow));
+}
+
+.dark .dark-drop-shadow {
+    filter: drop-shadow(0 0 1px var(--c-shadow));
+}
+
+body:not(.dark) .light-darker-70 {
+    filter: brightness(70%) drop-shadow(0 0 1px var(--c-shadow));
+}
+
+body:not(.dark) .light-drop-shadow {
+    filter: drop-shadow(0 0 1px var(--c-shadow));
 }
 
 
@@ -450,6 +485,12 @@ nav {
     margin-top: 10px;
     text-decoration: none;
     color: var(--c-link);
+    transition: all 0.3s ease;
+}
+
+.see-all:hover {
+    font-weight: 600;
+    letter-spacing: -0.3px;
 }
 
 .prim-bg {
@@ -523,6 +564,9 @@ nav {
     border-radius: 5px;
     letter-spacing: 0.4px;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
 
     /* Left padding +20px for svg width and +5px for spacing */
     padding: 10px 15px 10px 40px;
@@ -534,6 +578,34 @@ nav {
         height: 20px;
         width: 20px;
     }
+}
+
+.about-button:hover {
+    transform: scale(1.05);
+    font-weight: 500;
+    box-shadow: 0 4px 8px var(--c-shadow);
+}
+
+.about-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(0deg,
+            transparent,
+            transparent 30%,
+            rgba(255, 255, 255, 0.3));
+    transform: rotate(-45deg);
+    /* shine */
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.about-button:hover::before {
+    opacity: 1;
+    transform: rotate(-45deg) translateY(100%);
 }
 
 
