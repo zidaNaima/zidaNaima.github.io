@@ -15,6 +15,7 @@ function toggleTheme() {
     const isDark = document.body.classList.toggle("dark");
     // Save user's choice
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    init();
 }
 
 // --------------
@@ -308,3 +309,132 @@ if (page === '/zidaNaima.github.io/projects.html' || page === '/projects.html') 
 
     updateCarousel(0);
 }
+
+// --------------
+// Code added from wavePush.js repo for minification
+// Inline comments removed. See wavePush.js repo for more.
+// --------------
+
+const canvas = document.getElementById('wavepush');
+const ctx = canvas.getContext('2d');
+var w = canvas.width = window.innerWidth;
+var h = canvas.height = window.innerHeight;
+
+let wavesArray;
+let offset = 0;
+let waveCount = 20;
+let bandHeight = h / waveCount;
+let numberOfParticles = 12;
+var lineColor;
+
+// ----------------------------------------------
+
+let mouse = {
+    x: undefined,
+    y: undefined,
+    radius: (h / 80) * (w / 80),
+}
+
+window.addEventListener('mousemove',
+    function (event) {
+        mouse.x = event.x;
+        mouse.y = event.y;
+    }
+);
+
+window.addEventListener('mouseout',
+    function () {
+        mouse.x = undefined;
+        mouse.y = undefined;
+    }
+)
+
+window.addEventListener('resize',
+    function () {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+        bandHeight = h / waveCount;
+        mouse.radius = ((h / 80) * (w / 80));
+        init();
+    }
+);
+
+function init() {
+    wavesArray = [];
+    for (let i = 0; i < waveCount; i++) {
+        particlesArray = [];
+        let y = bandHeight * (i + 1) - bandHeight / 2;
+
+        for (let p = 0; p < numberOfParticles; p++) {
+            let x = -200 + ((w + 200 * 2) / (numberOfParticles - 1) * p);
+
+            particlesArray.push({
+                x,
+                y,
+                xPos: x,
+                yPos: y,
+                vX: 0,
+                vY: 0,
+                amplitude: Math.random() * 30,
+                period: Math.random() * Math.PI * 2,
+                length: 0.005 + Math.random() * 0.01
+            });
+        }
+        wavesArray.push(particlesArray);
+    }
+    lineColor = window.getComputedStyle(document.body).getPropertyValue('--c-wave').trim();
+}
+
+function animateParticles() {
+    ctx.clearRect(0, 0, w, h);
+    offset -= 0.005;
+
+    for (let i = 0; i < wavesArray.length; i++) {
+        let wave = wavesArray[i];
+
+        for (let j = 0; j < wave.length; j++) {
+            p = wave[j];
+            const layer1 = Math.sin(offset + p.period + (p.xPos * p.length)) * p.amplitude;
+            const layer2 = Math.sin(offset * 2.5 + (p.xPos * 0.03)) * p.amplitude * 0.4;
+            const layer3 = Math.sin(offset * 5 + (p.xPos * 0.08)) * 5;
+
+            const dx = p.xPos - mouse.x;
+            const dy = p.yPos - mouse.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < mouse.radius) {
+                const angle = Math.atan2(dy, dx);
+                const force = (mouse.radius - dist) / mouse.radius;
+                p.vX += Math.cos(angle) * force;
+                p.vY += Math.sin(angle) * force * 3;
+            }
+
+            p.vX += (p.xPos - p.x) * 0.05;
+            p.vY += (p.yPos + layer1 + layer2 + layer3 - p.y) * 0.05;
+
+            p.vX *= 0.9;
+            p.vY *= 0.9;
+
+            p.x += p.vX;
+            p.y += p.vY;
+        }
+
+        ctx.beginPath();
+
+        ctx.strokeStyle = lineColor;
+        ctx.lineWidth = 15;
+        ctx.lineCap = 'round';
+
+        ctx.moveTo(wave[0].x, wave[0].y);
+        for (let p = 1; p < wave.length - 1; p++) {
+            const xc = (wave[p].x + wave[p + 1].x) / 2;
+            const yc = (wave[p].y + wave[p + 1].y) / 2;
+            ctx.quadraticCurveTo(wave[p].x, wave[p].y, xc, yc);
+        }
+        ctx.stroke();
+    }
+    requestAnimationFrame(animateParticles);
+}
+
+init();
+animateParticles();

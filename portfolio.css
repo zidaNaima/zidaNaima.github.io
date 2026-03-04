@@ -19,6 +19,7 @@ html {
 :root {
     --c-bg: #fff;
     --c-font: #000;
+    --c-wave: #ecebe8;
     --c-shadow: rgba(0, 0, 0, 0.2);
     --c-primary: #f3f3f3;
     --c-primary-dark: #e3e3e3;
@@ -38,6 +39,7 @@ html {
 .dark {
     --c-bg: #121212;
     --c-font: #e7e7e7;
+    --c-wave: #252525;
     --c-shadow: rgba(0, 0, 0, 1);
     --c-primary: #232323;
     --c-primary-dark: #333;
@@ -63,6 +65,18 @@ body {
     margin: 0;
     padding: 0;
     cursor: default;
+}
+
+main {
+    background-color: var(--c-bg);
+}
+
+#wavepush {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -1;
 }
 
 p, h3 {
