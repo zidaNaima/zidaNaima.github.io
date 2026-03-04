@@ -182,51 +182,44 @@ function emailToClipboard() {
 
 // --------------
 
-if (page === '/zidaNaima.github.io/index.html' || page === '/index.html') {
-    // Footer form submission
-    const form = document.forms[0];
-    const nameInput = form.name;
-    const contactInput = form.contact;
-    const messageInput = form.message;
+const publicKey = "xfbPdiVD70qK8vTY3";
+const serviceId = "service_g63duhk";
+const templateId = "template_nphcapj";
+emailjs.init(publicKey);
 
-    const publicKey = "xfbPdiVD70qK8vTY3";
-    const serviceId = "service_g63duhk";
-    const templateId = "template_nphcapj";
-
-    // Form validation
-    function validateMessage() {
-        if (nameInput.value == "" || contactInput.value == "" || messageInput.value == "") { // All required content not entered
-            alert("Please fill out all required information before sending your message.")
-            return false;
-        }
-        return true;
+// Form validation
+function validateMessage(input) {
+    // Check all required content was entered
+    if (!input.name || !input.contact || !input.message) {
+        alert("Please fill out all required information before sending your message.")
+        return false;
     }
+    return true;
+}
 
-    // Form submission
-    form.addEventListener("submit", (e) => {
-        emailjs.init(publicKey);
+// Form submission
+const sendEmail = async (event) => {
+    event.preventDefault(); // Stops browser from refershing before email is 
+    const form = event.target;
 
-        e.preventDefault(); // Prevent form default behavior. Needed for outside submission.
-        const inputFields = {
-            name: nameInput.value,
-            contact: contactInput.value,
-            message: messageInput.value,
-        };
+    const inputFields = {
+        name: form.name.value,
+        contact: form.contact.value,
+        message: form.message.value,
+    };
 
-        if (validateMessage()) {
-            emailjs.send(serviceId, templateId, inputFields)
-                .then(() => {
-                    alert("Your message has been sent successfully. Thank you!");
-                    nameInput.value = "";
-                    contactInput.value = "";
-                    messageInput.value = "";
-                }, (error) => {
-                    alert("Something seems to have gone wrong. Please try again or email me directly.");
-                    console.log(error);
-                });
+    if (validateMessage(inputFields)) {
+        try {
+            const sendResult = await emailjs.send(serviceId, templateId, inputFields);
+            console.log("SUCCESS", sendResult.status, sendResult.text);
+            alert("Your message has been sent successfully. Thank you!");
+
+            form.reset();
+        } catch (error) {
+            console.error("FAILED", error);
+            alert("Something seems to have gone wrong. Please try again or email me directly. \nError: " + (error.text || "Check console"));
         }
-
-    });
+    }
 }
 
 // --------------
