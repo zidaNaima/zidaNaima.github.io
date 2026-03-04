@@ -955,18 +955,12 @@ footer {
 /* ---------- RESPONSIVENESS ------------------------------------------------------------ */
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-
-    /* Anything that doesn't worj on 320px screens goes here. */
     .p-full {
         padding: 60px 30px;
     }
 
     .mobile-flex-column {
         flex-direction: row;
-    }
-
-    header {
-        border-top: 5px solid #ff2222;
     }
 
     .hero {
@@ -1192,10 +1186,6 @@ footer {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    header {
-        border-top: 5px solid #de22ff;
-    }
-
     .mobile-h-0 {
         height: auto;
     }
@@ -1334,10 +1324,6 @@ footer {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    header {
-        border-top: 5px solid #227eff;
-    }
-
     nav ul {
         gap: 30px;
     }
@@ -1380,10 +1366,6 @@ footer {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    header {
-        border-top: 5px solid #22ff6c;
-    }
-
     #wrapper {
         width: 1200px;
         margin-left: auto;
