@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="portfolio.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
+    <!-- Initialize Emailjs at the top -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "xfbPdiVD70qK8vTY3",
+            });
+        })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -271,8 +281,8 @@
 
                 <div class="p-full centered">
                     <form onSubmit="sendEmail(event)">
-                        <input type="text" placeholder="Your name *" name="name" id="msg-name">
-                        <input type="text" placeholder="Your contact information *" name="contact" id="msg-contact">
+                        <input type="text" placeholder="Your name *" name="name" id="msg-name" autocomplete="name">
+                        <input type="text" placeholder="Your contact information *" name="contact" id="msg-contact" autocomplete="email tel">
                         <textarea placeholder="Your message *" name="message" id="msg-message"></textarea>
                         <input type="submit" value="send" id="msg-submit" class="uppercase">
                     </form>
@@ -300,15 +310,5 @@
 
 <!-- JavaScript must be loaded after the HTML content -->
 <script src="portfolio.js"></script>
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-    (function () {
-        emailjs.init({
-            publicKey: "xfbPdiVD70qK8vTY3",
-        });
-    })();
-</script>
 
 </html>

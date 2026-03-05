@@ -886,20 +886,20 @@ nav {
 
 form {
     width: 100%;
-    padding: 20px;
+    padding: 5px 20px 20px;
     background-color: var(--c-bg);
     border: 1px solid var(--c-item-dark);
     box-shadow: 1px 5px 15px var(--c-shadow);
 
     display: grid;
-    grid-template-rows: 40px 40px 120px 40px;
+    grid-template-rows: 55px 55px 180px 40px;
     grid-template-areas:
         "ni"
         "ci"
         "mi"
         "s"
     ;
-    gap: 40px;
+    gap: 10px;
 
     ::placeholder {
         color: var(--c-link);
@@ -910,7 +910,7 @@ input {
     height: 100%;
     font-family: 'Montserrat', sans-serif;
     color: var(--c-font);
-    background-color: var(--c-bg);
+    background-color: inherit;
     border: none;
     border-bottom: 1px solid var(--c-item-dark);
     outline: none;
@@ -927,7 +927,14 @@ textarea {
     resize: none;
 }
 
+#msg-name, #msg-contact {
+    padding-top: 20px;
+}
+
 #msg-message {
+    height: 120px;
+    width: 100%;
+    margin: auto;
     grid-area: mi;
 }
 
@@ -1025,12 +1032,13 @@ footer {
     }
 
     form {
-        grid-template-rows: 40px 120px 40px;
+        grid-template-rows: 55px 120px 40px;
         grid-template-areas:
             "ni ci"
             "mi mi"
             ". s"
         ;
+        gap: 40px;
     }
 
     .skills-tag-example {
