@@ -1,6 +1,3 @@
-let page = window.location.pathname;
-if (page == '/zidaNaima.github.io/') page = '/index.html';
-
 // Check saved preference and system setting on page load
 const savedTheme = localStorage.getItem('theme');
 const systemThemeIsDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -49,7 +46,7 @@ window.addEventListener('resize', hamNav);
 
 // --------------
 
-if (page === '/zidaNaima.github.io/experience.html' || page === '/experience.html') {
+if (onPage === "experience") {
 
     // Desktop-only function
     // Calculate and set the height of the experience section
@@ -185,7 +182,9 @@ function emailToClipboard() {
 const publicKey = "xfbPdiVD70qK8vTY3";
 const serviceId = "service_g63duhk";
 const templateId = "template_nphcapj";
-emailjs.init(publicKey);
+if (onPage === "index") {
+    emailjs.init(publicKey);
+}
 
 // Form validation
 function validateMessage(input) {
@@ -227,7 +226,7 @@ const sendEmail = async (event) => {
 // Modified code from
 // Author: Gopi Chakradhar https://gopichakradhar.me/
 // URL: https://freefrontend.com/javascript-carousels/
-if (page === '/zidaNaima.github.io/projects.html' || page === '/projects.html') {
+if (onPage === "projects") {
     const cards = document.querySelectorAll(".card");
     const dots = document.querySelectorAll(".dot");
     const upArrow = document.querySelectorAll(".nav-arrow.up");

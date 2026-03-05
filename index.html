@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="portfolio.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
+    <script type="text/javascript">
+        onPage = "index";
+    </script>
+
     <!-- Initialize Emailjs at the top -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
@@ -130,7 +134,8 @@
                 <section class="width-full">
                     <div class="centered gap-10 flex-wrap">
                         <p class="tag">Full-Stack Development</p>
-                        <p class="tag"><img src="logos/java-icon.svg" alt="Java logo" class="tag-logo dark-brighter-150">Java</p>
+                        <p class="tag"><img src="logos/java-icon.svg" alt="Java logo"
+                                class="tag-logo dark-brighter-150">Java</p>
                         <p class="tag"><img src="logos/css-icon.svg" alt="CSS logo" class="tag-logo dark-shadow">CSS</p>
                         <p class="tag"><img src="logos/javascript-icon.svg" alt="JavaScript logo"
                                 class="tag-logo">JavaScript</p>
@@ -282,7 +287,8 @@
                 <div class="p-full centered">
                     <form onSubmit="sendEmail(event)">
                         <input type="text" placeholder="Your name *" name="name" id="msg-name" autocomplete="name">
-                        <input type="text" placeholder="Your contact information *" name="contact" id="msg-contact" autocomplete="email tel">
+                        <input type="text" placeholder="Your contact information *" name="contact" id="msg-contact"
+                            autocomplete="email tel">
                         <textarea placeholder="Your message *" name="message" id="msg-message"></textarea>
                         <input type="submit" value="send" id="msg-submit" class="uppercase">
                     </form>

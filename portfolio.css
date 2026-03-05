@@ -819,6 +819,10 @@ nav {
     object-fit: cover;
 }
 
+.card a svg {
+    fill: var(--c-font);
+}
+
 .card-text {
     padding: 15px 10px 20px;
     display: flex;
@@ -829,6 +833,15 @@ nav {
     img {
         width: 25px;
         height: 25px;
+    }
+
+    a {
+        width: 25px;
+        height: 25px;
+
+        svg {
+            width: 100%;
+        }
     }
 }
 
@@ -1089,22 +1102,9 @@ footer {
         height: 100%;
     }
 
-    .card a svg {
-        fill: var(--c-font);
-    }
-
     .card-text {
         font-size: small;
         line-height: 18px;
-
-        a {
-            width: 25px;
-            height: 25px;
-
-            img {
-                width: 100%;
-            }
-        }
     }
 
     .card.center {
