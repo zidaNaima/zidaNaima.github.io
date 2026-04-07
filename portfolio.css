@@ -355,6 +355,7 @@ nav {
     ul {
         padding: 0 10px;
         cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
     }
 
     ul li {
@@ -1025,6 +1026,7 @@ textarea {
     background-color: var(--c-item);
     color: var(--c-font);
     border: 1px solid var(--c-item-dark);
+    cursor: pointer;
 }
 
 
