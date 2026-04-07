@@ -17,7 +17,7 @@ function toggleTheme() {
 
 // --------------
 
-const ham = document.getElementById("hamburger");
+const ham = document.querySelector("#hamburger");
 const nav = document.querySelector("nav");
 
 // Only initialize a single click listener
@@ -80,6 +80,8 @@ waveInElements.forEach(el => waveObserver.observe(el));
 // --------------
 
 if (onPage === "experience") {
+    const experience = document.querySelector("#experience");
+    const additional = document.querySelector("#additional");
 
     // Desktop-only function
     // Calculate and set the height of the experience section
@@ -92,18 +94,15 @@ if (onPage === "experience") {
         });
 
         // 24 line height of h3, 20 gap under h3, 50 bottom padding
-        document.getElementById("experience").style.height = (maxHeight + 94) + "px";
+        experience.style.height = (maxHeight + 94) + "px";
     }
 
     // --------------
 
-    const exp = document.getElementById("experience");
-    const addit = document.getElementById("additional");
-
     function sectionAccordion(section) {
         // Variables to toggle the items
-        const clkBtn = section.getElementsByClassName("click-open-btn");
-        const clkCtn = section.getElementsByClassName("click-open-content");
+        const clkBtn = section.querySelectorAll(".click-open-btn");
+        const clkCtn = section.querySelectorAll(".click-open-content");
         let last_opened = 0;
 
         // Initialize padding
@@ -138,8 +137,8 @@ if (onPage === "experience") {
     }
 
     // Run the accordion for both sections
-    sectionAccordion(exp);
-    sectionAccordion(addit);
+    sectionAccordion(experience);
+    sectionAccordion(additional);
 
     // --------------
 
@@ -154,8 +153,8 @@ if (onPage === "experience") {
             // Enable desktop mode
 
             // Wipe padding for all but first
-            const expCtn = document.getElementById("experience").getElementsByClassName("click-open-content");
-            const addtCtn = document.getElementById("additional").getElementsByClassName("click-open-content");
+            const expCtn = experience.querySelectorAll(".click-open-content");
+            const addtCtn = additional.querySelectorAll(".click-open-content");
             for (let i = 1; i < expCtn.length; i++) {
                 expCtn[i].style.padding = "0px";
             }
@@ -168,9 +167,9 @@ if (onPage === "experience") {
         } else if (!expResizedToDesktop && expScreenIsDesktop) {
             // Just resized into mobile mode
             // Disable desktop mode
-            document.getElementById("experience").style.removeProperty("height");
+            experience.style.removeProperty("height");
 
-            const clkCtn = document.getElementsByClassName("click-open-content");
+            const clkCtn = document.querySelectorAll(".click-open-content");
             for (let i = 0; i < clkCtn.length; i++) {
                 clkCtn[i].style.padding = "10px";
             }
@@ -180,9 +179,9 @@ if (onPage === "experience") {
             setExperienceHeight();
         } else {
             // Screen initialized to mobile
-            document.getElementById("experience").style.removeProperty("height");
+            experience.style.removeProperty("height");
 
-            const clkCtn = document.getElementsByClassName("click-open-content");
+            const clkCtn = document.querySelectorAll(".click-open-content");
             for (let i = 0; i < clkCtn.length; i++) {
                 clkCtn[i].style.padding = "10px";
             }
@@ -354,7 +353,7 @@ if (onPage === "projects") {
 // Inline comments removed. See wavePush.js repo for more.
 // --------------
 
-const canvas = document.getElementById('wavepush');
+const canvas = document.querySelector('#wavepush');
 const ctx = canvas.getContext('2d');
 var w = canvas.width = window.innerWidth;
 var h = canvas.height = window.innerHeight;
