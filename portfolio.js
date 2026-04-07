@@ -46,6 +46,39 @@ window.addEventListener('resize', hamNav);
 
 // --------------
 
+// Intersection Observers
+const slideObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    })
+}, {});
+const slideInElements = document.querySelectorAll(".slide-in");
+slideInElements.forEach(el => slideObserver.observe(el));
+const slideUpElements = document.querySelectorAll(".slide-up");
+slideUpElements.forEach(el => slideObserver.observe(el));
+const slideClickElements = document.querySelectorAll(".click-in");
+slideClickElements.forEach(el => slideObserver.observe(el));
+
+const waveObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            // Select all children of any type
+            const items = entry.target.querySelectorAll(":scope > *");
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add("wave-in");
+                }, index * 70);
+            })
+        }
+    })
+}, {});
+const waveInElements = document.querySelectorAll(".wave-in-section");
+waveInElements.forEach(el => waveObserver.observe(el));
+
+// --------------
+
 if (onPage === "experience") {
 
     // Desktop-only function
@@ -233,6 +266,7 @@ if (onPage === "projects") {
     const downArrow = document.querySelectorAll(".nav-arrow.down");
     let currentIndex = 0;
     let isAnimating = false;
+    let cardInterval;
 
     function updateCarousel(newIndex) {
         if (isAnimating) return;
@@ -267,34 +301,47 @@ if (onPage === "projects") {
         }, 800);
     }
 
+    function cardAutoScroll() {
+        cardInterval = setInterval(() => {
+            updateCarousel(currentIndex + 1);
+        }, 4000);
+    }
+    cardAutoScroll();
+
     upArrow.forEach(arrow => {
         arrow.addEventListener("click", () => {
+            clearInterval(cardInterval);
             updateCarousel(currentIndex - 1);
         });
     });
 
     downArrow.forEach(arrow => {
         arrow.addEventListener("click", () => {
+            clearInterval(cardInterval);
             updateCarousel(currentIndex + 1);
         });
     });
 
     dots.forEach((dot, i) => {
         dot.addEventListener("click", () => {
+            clearInterval(cardInterval);
             updateCarousel(i);
         });
     });
 
     cards.forEach((card, i) => {
         card.addEventListener("click", () => {
+            clearInterval(cardInterval);
             updateCarousel(i);
         });
     });
 
     document.addEventListener("keydown", (e) => {
         if (e.key === "ArrowUp") {
+            clearInterval(cardInterval);
             updateCarousel(currentIndex - 1);
         } else if (e.key === "ArrowDown") {
+            clearInterval(cardInterval);
             updateCarousel(currentIndex + 1);
         }
     });

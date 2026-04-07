@@ -88,8 +88,8 @@
             <div id="jump-to-about"></div>
             <div id="about-and-skills" class="p-full">
                 <section id="about-section" class="flex gap-20">
-                    <div id="headshot-img"></div>
-                    <div>
+                    <div id="headshot-img" class="click-in left-click"></div>
+                    <div class="click-in right-click">
                         <p>
                             Self-motivated and passionate Computer Science student with 3 years of experience in a wide
                             variety of fields working to bring knowledge, creativity and impact to all projects. Coming
@@ -132,7 +132,7 @@
                 <!-- end about section -->
 
                 <section class="width-full">
-                    <div class="centered gap-10 flex-wrap">
+                    <div class="centered gap-10 flex-wrap wave-in-section">
                         <p class="tag">Full-Stack Development</p>
                         <p class="tag"><img src="logos/java-icon.svg" alt="Java logo"
                                 class="tag-logo dark-brighter-150">Java</p>
@@ -153,8 +153,8 @@
 
                     <div class="split-divider"></div>
 
-                    <section class="mb-20">
-                        <section class="box-item">
+                    <section class="mb-20 slide-in-overflow">
+                        <section class="box-item slide-in">
                             <a href="experience.html">
                                 <div class="flex justify-between">
                                     <div>
@@ -168,7 +168,7 @@
                             </a>
                         </section>
 
-                        <section class="box-item">
+                        <section class="box-item slide-in">
                             <a href="experience.html">
                                 <div class="flex justify-between">
                                     <div>
@@ -191,48 +191,46 @@
 
                     <div class="split-divider"></div>
 
-                    <section id="projects-section">
-                        <div>
-                            <section class="box-item" id="proj-bg-1">
-                                <a href="https://zidanaima.github.io/zidanaima.github.io-einasvel/" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <div>
-                                        <p class="font-500">A Guide to the Einasvel</p>
-                                        <p class="font-smaller">February 2025 - Present</p>
-                                    </div>
-                                    <div>
-                                        <p class="proj-text-bg font-smaller">
-                                            A comprehensive guide to a fictional alien planet created over
-                                            the last four years. Originally starting as a class final, I took this
-                                            project
-                                            further by researching, implementing,
-                                            and refining various features in order to create a fun
-                                            user-friendly and adaptable site.
-                                        </p>
-                                    </div>
-                                </a>
-                            </section>
-                            <section class="box-item" id="proj-bg-3">
-                                <a href="https://zidanaima.github.io/wavePush.js/" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <div>
-                                        <p class="font-500">wavePush.js</p>
-                                        <p class="font-smaller">February 2026 - Present</p>
-                                    </div>
-                                    <div>
-                                        <p class="proj-text-bg font-smaller">
-                                            A JavaScript open-source library creating a simple interactive wave
-                                            simulation
-                                            for
-                                            websites. Interestingly enough, you can see an example of this project in
-                                            the
-                                            background of this website!
-                                        </p>
-                                    </div>
-                                </a>
-                            </section>
-                            <a href="projects.html" class="see-all">See All Projects &rarr;</a>
-                        </div>
+                    <section id="projects-section" class="slide-in-overflow">
+                        <section class="box-item slide-in" id="proj-bg-1">
+                            <a href="https://zidanaima.github.io/zidanaima.github.io-einasvel/" target="_blank"
+                                rel="noopener noreferrer">
+                                <div>
+                                    <p class="font-500">A Guide to the Einasvel</p>
+                                    <p class="font-smaller">February 2025 - Present</p>
+                                </div>
+                                <div>
+                                    <p class="proj-text-bg font-smaller">
+                                        A comprehensive guide to a fictional alien planet created over
+                                        the last four years. Originally starting as a class final, I took this
+                                        project
+                                        further by researching, implementing,
+                                        and refining various features in order to create a fun
+                                        user-friendly and adaptable site.
+                                    </p>
+                                </div>
+                            </a>
+                        </section>
+                        <section class="box-item slide-in" id="proj-bg-3">
+                            <a href="https://zidanaima.github.io/wavePush.js/" target="_blank"
+                                rel="noopener noreferrer">
+                                <div>
+                                    <p class="font-500">wavePush.js</p>
+                                    <p class="font-smaller">February 2026 - Present</p>
+                                </div>
+                                <div>
+                                    <p class="proj-text-bg font-smaller">
+                                        A JavaScript open-source library creating a simple interactive wave
+                                        simulation
+                                        for
+                                        websites. Interestingly enough, you can see an example of this project in
+                                        the
+                                        background of this website!
+                                    </p>
+                                </div>
+                            </a>
+                        </section>
+                        <a href="projects.html" class="see-all">See All Projects &rarr;</a>
                     </section>
                     <!-- end projects section -->
                 </div>
@@ -284,7 +282,7 @@
                     </button>
                 </div>
 
-                <div class="p-full centered">
+                <div class="p-full centered slide-up">
                     <form onSubmit="sendEmail(event)">
                         <input type="text" placeholder="Your name *" name="name" id="msg-name" autocomplete="name">
                         <input type="text" placeholder="Your contact information *" name="contact" id="msg-contact"

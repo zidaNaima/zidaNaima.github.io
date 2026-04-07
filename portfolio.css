@@ -248,6 +248,7 @@ body:not(.dark) .light-drop-shadow {
     background-color: var(--c-primary);
     height: 100%;
     width: 95%;
+    margin-left: -1px;
     display: flex;
     align-items: center;
     padding: 3px 20px 3px 10px;
@@ -527,6 +528,72 @@ nav {
 
 .split-divider {
     background-color: var(--c-font);
+}
+
+.slide-in {
+    opacity: 0;
+    translate: -50%;
+    transition-property: translate, opacity;
+    transition-duration: 800ms;
+    transition-timing-function: ease-out;
+    transition-delay: 200ms;
+}
+
+.slide-up {
+    opacity: 0;
+    transform: scale(1.1);
+    transition-property: transform, opacity;
+    transition-duration: 600ms;
+    transition-timing-function: ease-out;
+    transition-delay: 200ms;
+}
+
+.click-in.left-click {
+    opacity: 0;
+    translate: -100px;
+    transition-property: translate, opacity;
+    transition-duration: 600ms;
+}
+.click-in.right-click {
+    opacity: 0;
+    translate: 100px;
+    transition-property: translate, opacity;
+    transition-duration: 600ms;
+}
+
+.slide-in.show, .slide-up.show, .click-in.show {
+    opacity: 1;
+    translate: 0px;
+    transform: scale(1);
+}
+
+.slide-in-overflow {
+    overflow: hidden;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.wave-in {
+    animation: bounce 600ms;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: none;
+        animation-timing-function: ease-out;
+    }
+
+    50% {
+        transform: translateY(-25px);
+        animation-timing-function: ease-in;
+    }
+
+    90% {
+        transform: translateY(5px);
+        animation-timing-function: ease-in;
+    }
 }
 
 
@@ -1072,10 +1139,6 @@ footer {
     .skills-logo {
         width: 20px;
         max-height: 20px;
-    }
-
-    #awards {
-        justify-content: space-between;
     }
 
     /* Projects Carousel main styling */
