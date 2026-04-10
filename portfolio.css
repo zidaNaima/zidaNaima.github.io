@@ -68,6 +68,7 @@ body {
 
 main {
     background-color: var(--c-bg);
+    border-radius: inherit;
 }
 
 #wavepush {
@@ -184,24 +185,26 @@ p, h3 {
     padding-top: 10px;
 }
 
+.m-5 {
+    margin: 5px;
+}
+
 .mobile-h-0 {
     height: 0;
 }
 
-.dark .dark-brighter-150 {
-    filter: brightness(150%) drop-shadow(0 0 1px var(--c-shadow));
+.dark .dark-logo-light-border {
+    background: var(--c-item);
+    border-radius: 2px;
+    padding: 1.5px;
 }
 
-.dark .dark-drop-shadow {
-    filter: drop-shadow(0 0 1px var(--c-shadow));
-}
-
-body:not(.dark) .light-darker-70 {
-    filter: brightness(70%) drop-shadow(0 0 1px var(--c-shadow));
-}
-
-body:not(.dark) .light-drop-shadow {
-    filter: drop-shadow(0 0 1px var(--c-shadow));
+body:not(.dark) .light-logo-border, .dark .dark-logo-border {
+    background: var(--c-primary);
+    border-radius: 1px;
+    transform: scale(1.25);
+    padding: 0.5px;
+    aspect-ratio: 1/1;
 }
 
 
