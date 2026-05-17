@@ -791,6 +791,10 @@ nav {
     box-shadow: 0px 3px 10px 2px var(--c-shadow);
 }
 
+.gold-award {
+    border: 1px solid gold;
+}
+
 .award-center {
     position: absolute;
     transform: translateX(60px) translateY(50px);
